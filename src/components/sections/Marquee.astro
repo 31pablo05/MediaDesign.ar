@@ -1,0 +1,43 @@
+---
+---
+
+<div 
+  class="overflow-hidden border-t border-b py-3"
+  style="background-color: var(--color-bg); border-color: var(--color-cyan);"
+>
+  <div class="flex whitespace-nowrap animate-[marquee_20s_linear_infinite]">
+    {/* Repetir el contenido 2 veces para el efecto de loop infinito */}
+    {[...Array(2)].map((_, i) => (
+      <div class="flex items-center space-x-8 px-4">
+        <span 
+          class="text-sm tracking-wider"
+          style="font-family: var(--font-mono); color: var(--color-cyan);"
+        >
+          ✦ CREAMOS TU MUNDO DIGITAL
+        </span>
+        <span class="text-xl">🖱️</span>
+        <span 
+          class="text-sm tracking-wider"
+          style="font-family: var(--font-mono); color: var(--color-cyan);"
+        >
+          ✦ CREAMOS TU MUNDO DIGITAL
+        </span>
+        <span class="text-xl">↗️</span>
+        <span 
+          class="text-sm tracking-wider"
+          style="font-family: var(--font-mono); color: var(--color-cyan);"
+        >
+          ✦ CREAMOS TU MUNDO DIGITAL
+        </span>
+        <span class="text-xl">📁</span>
+        <span 
+          class="text-sm tracking-wider"
+          style="font-family: var(--font-mono); color: var(--color-cyan);"
+        >
+          ✦ CREAMOS TU MUNDO DIGITAL
+        </span>
+        <span class="text-xl" style="color: var(--color-magenta);">⚠️</span>
+      </div>
+    ))}
+  </div>
+</div>

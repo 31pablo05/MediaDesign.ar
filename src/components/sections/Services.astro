@@ -1,0 +1,62 @@
+---
+import ServiceCard from '../ui/ServiceCard.astro';
+---
+
+<section id="servicios" class="section-padding bg-black">
+  <div class="container mx-auto px-6">
+    {/* Encabezado */}
+    <div class="text-center mb-12">
+      <div 
+        class="text-xs tracking-widest mb-4 uppercase"
+        style="font-family: var(--font-mono); color: var(--color-cyan); letter-spacing: 0.2em;"
+      >
+        SOLUCIONES CREATIVAS PARA TU MARCA
+      </div>
+      <h2 
+        class="text-4xl md:text-5xl font-bold"
+        style="font-family: var(--font-display);"
+      >
+        NUESTROS SERVICIOS
+      </h2>
+    </div>
+
+    {/* Grid de Servicios */}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <ServiceCard 
+        icon="🌐"
+        title="DISEÑO WEB"
+        description="Sitios modernos, rápidos y adaptados a tu marca."
+      />
+      <ServiceCard 
+        icon="📄"
+        title="LANDING PAGES"
+        description="Páginas de aterrizaje optimizadas para conversión."
+      />
+      <ServiceCard 
+        icon="🛒"
+        title="TIENDAS ONLINE"
+        description="E-commerce funcional y atractivo para vender más."
+      />
+      <ServiceCard 
+        icon="📱"
+        title="GESTIÓN DE REDES"
+        description="Estrategia, contenido y gestión de redes sociales."
+      />
+      <ServiceCard 
+        icon="🎨"
+        title="DISEÑO GRÁFICO"
+        description="Piezas visuales que comunican tu mensaje."
+      />
+      <ServiceCard 
+        icon="✨"
+        title="BRANDING"
+        description="Identidad visual y posicionamiento de marca."
+      />
+      <ServiceCard 
+        icon="🎬"
+        title="CONTENIDO AUDIOVISUAL"
+        description="Videos, reels y producciones de alto impacto."
+      />
+    </div>
+  </div>
+</section>

@@ -6,8 +6,8 @@ export default function GlitchText({ text, className = '' }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setIsGlitching(true);
-      setTimeout(() => setIsGlitching(false), 300);
-    }, Math.random() * 3000 + 2000); // Random between 2-5 seconds
+      setTimeout(() => setIsGlitching(false), 400);
+    }, Math.random() * 2000 + 1000); // Random between 1-3 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -16,6 +16,10 @@ export default function GlitchText({ text, className = '' }) {
     <span 
       className={`glitch ${className} ${isGlitching ? 'glitching' : ''}`}
       data-text={text}
+      style={{
+        position: 'relative',
+        display: 'inline-block'
+      }}
     >
       {text}
     </span>

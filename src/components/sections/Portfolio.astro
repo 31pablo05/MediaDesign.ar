@@ -1,0 +1,162 @@
+---
+// Portfolio con filtros interactivos
+---
+
+<section id="portfolio" class="section-padding bg-[var(--color-bg-deep)]">
+  <div class="container mx-auto px-6">
+    {/* Encabezado */}
+    <div class="text-center mb-12">
+      <div 
+        class="text-xs tracking-widest mb-4 uppercase"
+        style="font-family: var(--font-mono); color: var(--color-cyan); letter-spacing: 0.2em;"
+      >
+        NUESTROS TRABAJOS
+      </div>
+      <h2 
+        class="text-4xl md:text-5xl font-bold mb-8"
+        style="font-family: var(--font-display);"
+      >
+        PORTFOLIO
+      </h2>
+
+      {/* Filtros - React Island para interactividad */}
+      <div class="flex flex-wrap justify-center gap-3 mb-12">
+        <button 
+          class="px-4 py-2 text-sm rounded-full border-2 transition-all bg-[var(--color-cyan)] text-black border-[var(--color-cyan)]"
+          style="font-family: var(--font-mono);"
+        >
+          Todos
+        </button>
+        <button 
+          class="px-4 py-2 text-sm rounded-full border-2 transition-all border-white/30 text-[var(--color-muted)] hover:border-white hover:text-white"
+          style="font-family: var(--font-mono);"
+        >
+          Web
+        </button>
+        <button 
+          class="px-4 py-2 text-sm rounded-full border-2 transition-all border-white/30 text-[var(--color-muted)] hover:border-white hover:text-white"
+          style="font-family: var(--font-mono);"
+        >
+          Redes
+        </button>
+        <button 
+          class="px-4 py-2 text-sm rounded-full border-2 transition-all border-white/30 text-[var(--color-muted)] hover:border-white hover:text-white"
+          style="font-family: var(--font-mono);"
+        >
+          Branding
+        </button>
+        <button 
+          class="px-4 py-2 text-sm rounded-full border-2 transition-all border-white/30 text-[var(--color-muted)] hover:border-white hover:text-white"
+          style="font-family: var(--font-mono);"
+        >
+          Audiovisual
+        </button>
+      </div>
+    </div>
+
+    {/* Grid de Proyectos */}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Proyecto 1 */}
+      <div class="group cursor-pointer">
+        <div 
+          class="aspect-video bg-[var(--color-surface)] rounded-lg overflow-hidden border border-white/10 transition-all duration-300 group-hover:-translate-y-2 group-hover:border-[var(--color-cyan)] group-hover:shadow-[var(--shadow-neon-cyan)] flex items-center justify-center"
+        >
+          <div class="text-center p-6">
+            <div class="text-6xl mb-4">🌐</div>
+            <h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display);">
+              Proyecto Web
+            </h3>
+            <p class="text-xs" style="font-family: var(--font-mono); color: var(--color-cyan);">
+              WEB
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Proyecto 2 */}
+      <div class="group cursor-pointer">
+        <div 
+          class="aspect-video bg-[var(--color-surface)] rounded-lg overflow-hidden border border-white/10 transition-all duration-300 group-hover:-translate-y-2 group-hover:border-[var(--color-cyan)] group-hover:shadow-[var(--shadow-neon-cyan)] flex items-center justify-center"
+        >
+          <div class="text-center p-6">
+            <div class="text-6xl mb-4">🎨</div>
+            <h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display);">
+              Identidad Visual
+            </h3>
+            <p class="text-xs" style="font-family: var(--font-mono); color: var(--color-cyan);">
+              BRANDING
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Proyecto 3 */}
+      <div class="group cursor-pointer">
+        <div 
+          class="aspect-video bg-[var(--color-surface)] rounded-lg overflow-hidden border border-white/10 transition-all duration-300 group-hover:-translate-y-2 group-hover:border-[var(--color-cyan)] group-hover:shadow-[var(--shadow-neon-cyan)] flex items-center justify-center"
+        >
+          <div class="text-center p-6">
+            <div class="text-6xl mb-4">📱</div>
+            <h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display);">
+              Campaña Social
+            </h3>
+            <p class="text-xs" style="font-family: var(--font-mono); color: var(--color-cyan);">
+              REDES
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Proyecto 4 */}
+      <div class="group cursor-pointer">
+        <div 
+          class="aspect-video bg-[var(--color-surface)] rounded-lg overflow-hidden border border-white/10 transition-all duration-300 group-hover:-translate-y-2 group-hover:border-[var(--color-cyan)] group-hover:shadow-[var(--shadow-neon-cyan)] flex items-center justify-center"
+        >
+          <div class="text-center p-6">
+            <div class="text-6xl mb-4">🎬</div>
+            <h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display);">
+              Video Corporativo
+            </h3>
+            <p class="text-xs" style="font-family: var(--font-mono); color: var(--color-cyan);">
+              AUDIOVISUAL
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Proyecto 5 */}
+      <div class="group cursor-pointer">
+        <div 
+          class="aspect-video bg-[var(--color-surface)] rounded-lg overflow-hidden border border-white/10 transition-all duration-300 group-hover:-translate-y-2 group-hover:border-[var(--color-cyan)] group-hover:shadow-[var(--shadow-neon-cyan)] flex items-center justify-center"
+        >
+          <div class="text-center p-6">
+            <div class="text-6xl mb-4">💼</div>
+            <h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display);">
+              E-commerce
+            </h3>
+            <p class="text-xs" style="font-family: var(--font-mono); color: var(--color-cyan);">
+              WEB
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Proyecto 6 */}
+      <div class="group cursor-pointer">
+        <div 
+          class="aspect-video bg-[var(--color-surface)] rounded-lg overflow-hidden border border-white/10 transition-all duration-300 group-hover:-translate-y-2 group-hover:border-[var(--color-cyan)] group-hover:shadow-[var(--shadow-neon-cyan)] flex items-center justify-center"
+        >
+          <div class="text-center p-6">
+            <div class="text-6xl mb-4">📸</div>
+            <h3 class="text-xl font-bold mb-2" style="font-family: var(--font-display);">
+              Contenido Digital
+            </h3>
+            <p class="text-xs" style="font-family: var(--font-mono); color: var(--color-cyan);">
+              REDES
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

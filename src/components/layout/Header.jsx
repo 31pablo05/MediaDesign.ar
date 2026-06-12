@@ -30,19 +30,12 @@ export default function Header() {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex flex-col">
-            <div className="text-xl leading-none" style={{ fontFamily: 'var(--font-display)' }}>
-              MEDIA
-            </div>
-            <div className="text-3xl leading-none" style={{ fontFamily: 'var(--font-display)' }}>
-              DESIGN
-            </div>
-            <div 
-              className="text-[10px] mt-1 tracking-wider" 
-              style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-cyan)' }}
-            >
-              Estudio Digital Integral
-            </div>
+          <a href="#" className="flex items-center">
+            <img 
+              src="/logo2.jpeg" 
+              alt="Media Design - Estudio Digital Integral" 
+              className="h-12 w-auto"
+            />
           </a>
 
           {/* Desktop Navigation */}
@@ -66,11 +59,20 @@ export default function Header() {
           {/* Contact Button (Desktop) */}
           <a
             href="#contacto"
-            className="hidden md:block px-6 py-2 border-2 transition-all duration-200 hover:bg-[var(--color-magenta)] hover:text-black"
+            className="hidden md:block px-6 py-2 border-2 rounded transition-all duration-200"
             style={{ 
               borderColor: 'var(--color-magenta)', 
               color: 'var(--color-magenta)',
-              fontFamily: 'var(--font-body)'
+              fontFamily: 'var(--font-body)',
+              backgroundColor: 'transparent'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--color-magenta)';
+              e.currentTarget.style.color = 'black';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent';
+              e.currentTarget.style.color = 'var(--color-magenta)';
             }}
           >
             CONTACTO
