@@ -1,0 +1,15 @@
+---
+const { icon, title, description } = Astro.props;
+---
+
+<div class="service-card bg-[var(--color-surface)] border border-white/10 rounded-[var(--radius)] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-cyan)] hover:shadow-[var(--shadow-neon-cyan)]">
+  <div class="icon-wrapper w-16 h-16 mx-auto mb-6 bg-black border border-[var(--color-cyan)]/30 rounded-lg flex items-center justify-center text-3xl">
+    {icon}
+  </div>
+  <h3 class="text-xl font-bold mb-3 text-white" style="font-family: var(--font-display);">
+    {title}
+  </h3>
+  <p class="text-[var(--color-muted)]" style="font-family: var(--font-body);">
+    {description}
+  </p>
+</div>

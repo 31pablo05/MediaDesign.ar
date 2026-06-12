@@ -1,0 +1,16 @@
+---
+const { label, href = "#", variant = "primary", target = "_self" } = Astro.props;
+
+const variants = {
+  primary: "bg-gradient-to-r from-[var(--color-magenta)] to-[var(--color-cyan)] text-black hover:from-[var(--color-cyan)] hover:to-[var(--color-magenta)] border-none",
+  outline: "border border-[var(--color-cyan)] text-[var(--color-cyan)] bg-transparent hover:bg-[var(--color-cyan)] hover:text-black"
+};
+---
+
+<a 
+  href={href} 
+  target={target}
+  class={`inline-block px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:-translate-y-1 ${variants[variant]}`}
+>
+  {label}
+</a>
