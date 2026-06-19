@@ -11,11 +11,11 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: 'INICIO',          href: '#inicio' },
-    { name: 'SERVICIOS',       href: '#servicios' },
-    { name: 'PROYECTOS',       href: '#portfolio' },
-    { name: 'SOBRE NOSOTROS',  href: '#nosotros' },
-    { name: 'BLOG',            href: '#blog' },
+    { name: 'INICIO',          href: '/#inicio' },
+    { name: 'SERVICIOS',       href: '/#servicios' },
+    { name: 'PROYECTOS',       href: '/#portfolio' },
+    { name: 'SOBRE NOSOTROS',  href: '/#nosotros' },
+    { name: 'BLOG',            href: '/blog' },
   ];
 
   return (
@@ -43,7 +43,7 @@ export default function Header() {
         }}
       >
         {/* Logo */}
-        <a href="#inicio" style={{ display: 'flex', flexDirection: 'column', lineHeight: .82, textDecoration: 'none' }}>
+        <a href="/" style={{ display: 'flex', flexDirection: 'column', lineHeight: .82, textDecoration: 'none' }}>
           <span style={{ fontFamily: "'Anton', sans-serif", fontSize: 30, letterSpacing: 1, color: '#fff', filter: 'url(#rough)' }}>
             MEDIA
           </span>
@@ -77,7 +77,7 @@ export default function Header() {
 
         {/* CTA desktop */}
         <a
-          href="#contacto"
+          href="/#contacto"
           className="hidden md:block"
           style={{
             fontSize: 13.5,
@@ -149,7 +149,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#contacto"
+            href="/#contacto"
             onClick={() => setIsMenuOpen(false)}
             style={{
               display: 'block',

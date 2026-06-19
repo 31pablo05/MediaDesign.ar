@@ -1,0 +1,359 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/layout/Header.jsx';
+import Footer from '../components/layout/Footer.astro';
+import Marquee from '../components/sections/Marquee.astro';
+---
+
+<Layout 
+  title="Blog - Ideas & Pixeles | Media Design" 
+  description="Tendencias de diseño, branding, redes y todo lo que aprendemos creando mundos digitales."
+>
+  <Header client:load />
+  
+  <main style="position:relative;background:#07070b;color:#f4f5fa;overflow-x:hidden;">
+    
+    <!-- Grid background -->
+    <div style="position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(120% 70% at 50% 0%,#000 35%,transparent 80%);mask-image:radial-gradient(120% 70% at 50% 0%,#000 35%,transparent 80%)"></div>
+    
+    <!-- Purple glow -->
+    <div style="position:absolute;top:-160px;right:-120px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(157,92,255,.14),transparent 62%);filter:blur(20px);pointer-events:none"></div>
+
+    <!-- HERO -->
+    <section style="position:relative;z-index:10;max-width:1360px;margin:0 auto;padding:60px 56px 30px;text-align:center;">
+      <span style="font-size:14px;font-weight:600;letter-spacing:4px;color:#2fe4ff;text-shadow:0 0 12px rgba(47,228,255,.5);font-family:'Chakra Petch',sans-serif;">
+        EL BLOG DEL ESTUDIO
+      </span>
+      
+      <h1 style="font-family:'Anton',sans-serif;font-size:84px;letter-spacing:1px;color:#fff;line-height:.92;margin:16px 0 18px;filter:url(#rough);">
+        IDEAS &amp; PIXELES
+      </h1>
+      
+      <p style="font-size:19px;line-height:1.6;color:#cdd2dc;max-width:600px;margin:0 auto;font-family:'Chakra Petch',sans-serif;">
+        Tendencias de diseño, branding, redes y todo lo que aprendemos creando mundos digitales.
+      </p>
+      
+      <!-- Filtros -->
+      <div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:30px;">
+        <button class="filter-btn active">TODOS</button>
+        <button class="filter-btn">DISEÑO</button>
+        <button class="filter-btn">BRANDING</button>
+        <button class="filter-btn">REDES</button>
+        <button class="filter-btn">VIDEO</button>
+      </div>
+    </section>
+
+    <!-- ARTICULO DESTACADO -->
+    <section style="position:relative;z-index:10;max-width:1360px;margin:0 auto;padding:30px 56px 10px;">
+      <a href="#" class="featured-post">
+        <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);min-height:320px;display:grid;place-items:center;color:#666;">
+          <span style="font-size:18px;">Imagen destacada</span>
+        </div>
+        <div style="padding:44px 40px;display:flex;flex-direction:column;justify-content:center;">
+          <span style="font-size:11.5px;font-weight:700;letter-spacing:2px;color:#ff3ad8;font-family:'Chakra Petch',sans-serif;">
+            DESTACADO · DISEÑO
+          </span>
+          <h2 style="font-family:'Anton',sans-serif;font-size:40px;line-height:1;color:#fff;margin:14px 0 14px;filter:url(#rough);">
+            TENDENCIAS DE DISEÑO WEB PARA 2026
+          </h2>
+          <p style="font-size:16px;line-height:1.6;color:#9aa0ad;margin-bottom:22px;font-family:'Chakra Petch',sans-serif;">
+            Del retro-futurismo al brutalismo suave: las direcciones visuales que dominarán las pantallas este año y cómo aplicarlas a tu marca.
+          </p>
+          <span style="display:flex;align-items:center;gap:10px;font-size:13px;color:#71757f;font-family:'Chakra Petch',sans-serif;">
+            <span style="width:28px;height:28px;border-radius:50%;background:linear-gradient(120deg,#2fe4ff,#ff3ad8);"></span>
+            Media Design · 12 Jun 2026 · 6 min
+          </span>
+        </div>
+      </a>
+    </section>
+
+    <!-- GRID DE ARTICULOS -->
+    <section style="position:relative;z-index:10;max-width:1360px;margin:0 auto;padding:34px 56px 70px;">
+      <div class="blog-grid">
+        
+        <!-- Post 1 -->
+        <a href="#" class="blog-card">
+          <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);aspect-ratio:16/10;display:grid;place-items:center;color:#666;">
+            <span>Imagen</span>
+          </div>
+          <div style="padding:22px 22px 26px;display:flex;flex-direction:column;gap:10px;">
+            <span style="font-size:11px;font-weight:700;letter-spacing:2px;color:#2fe4ff;font-family:'Chakra Petch',sans-serif;">BRANDING</span>
+            <h3 style="font-size:19px;font-weight:700;line-height:1.25;color:#fff;font-family:'Chakra Petch',sans-serif;">
+              Cómo crear una identidad de marca memorable
+            </h3>
+            <p style="font-size:14px;line-height:1.55;color:#9aa0ad;font-family:'Chakra Petch',sans-serif;">
+              Los pilares de un branding que conecta y perdura en la mente de tu audiencia.
+            </p>
+            <span style="font-size:12px;color:#71757f;margin-top:4px;font-family:'Chakra Petch',sans-serif;">28 May 2026 · 5 min</span>
+          </div>
+        </a>
+
+        <!-- Post 2 -->
+        <a href="#" class="blog-card">
+          <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);aspect-ratio:16/10;display:grid;place-items:center;color:#666;">
+            <span>Imagen</span>
+          </div>
+          <div style="padding:22px 22px 26px;display:flex;flex-direction:column;gap:10px;">
+            <span style="font-size:11px;font-weight:700;letter-spacing:2px;color:#ff3ad8;font-family:'Chakra Petch',sans-serif;">REDES</span>
+            <h3 style="font-size:19px;font-weight:700;line-height:1.25;color:#fff;font-family:'Chakra Petch',sans-serif;">
+              Reels que sí convierten: anatomía de un viral
+            </h3>
+            <p style="font-size:14px;line-height:1.55;color:#9aa0ad;font-family:'Chakra Petch',sans-serif;">
+              Estructura, ritmo y gancho: la fórmula detrás del contenido que la gente comparte.
+            </p>
+            <span style="font-size:12px;color:#71757f;margin-top:4px;font-family:'Chakra Petch',sans-serif;">18 May 2026 · 4 min</span>
+          </div>
+        </a>
+
+        <!-- Post 3 -->
+        <a href="#" class="blog-card">
+          <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);aspect-ratio:16/10;display:grid;place-items:center;color:#666;">
+            <span>Imagen</span>
+          </div>
+          <div style="padding:22px 22px 26px;display:flex;flex-direction:column;gap:10px;">
+            <span style="font-size:11px;font-weight:700;letter-spacing:2px;color:#9d5cff;font-family:'Chakra Petch',sans-serif;">DISEÑO</span>
+            <h3 style="font-size:19px;font-weight:700;line-height:1.25;color:#fff;font-family:'Chakra Petch',sans-serif;">
+              Color en pantalla: cómo elegir una paleta neón
+            </h3>
+            <p style="font-size:14px;line-height:1.55;color:#9aa0ad;font-family:'Chakra Petch',sans-serif;">
+              Contraste, accesibilidad y emoción: usar color vibrante sin quemar la vista.
+            </p>
+            <span style="font-size:12px;color:#71757f;margin-top:4px;font-family:'Chakra Petch',sans-serif;">11 May 2026 · 5 min</span>
+          </div>
+        </a>
+
+        <!-- Post 4 -->
+        <a href="#" class="blog-card">
+          <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);aspect-ratio:16/10;display:grid;place-items:center;color:#666;">
+            <span>Imagen</span>
+          </div>
+          <div style="padding:22px 22px 26px;display:flex;flex-direction:column;gap:10px;">
+            <span style="font-size:11px;font-weight:700;letter-spacing:2px;color:#57ff7a;font-family:'Chakra Petch',sans-serif;">VIDEO</span>
+            <h3 style="font-size:19px;font-weight:700;line-height:1.25;color:#fff;font-family:'Chakra Petch',sans-serif;">
+              Edición con ritmo: cortas que mantienen la atención
+            </h3>
+            <p style="font-size:14px;line-height:1.55;color:#9aa0ad;font-family:'Chakra Petch',sans-serif;">
+              Técnicas de montaje para que tus videos se sientan dinámicos de principio a fin.
+            </p>
+            <span style="font-size:12px;color:#71757f;margin-top:4px;font-family:'Chakra Petch',sans-serif;">2 May 2026 · 8 min</span>
+          </div>
+        </a>
+
+        <!-- Post 5 -->
+        <a href="#" class="blog-card">
+          <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);aspect-ratio:16/10;display:grid;place-items:center;color:#666;">
+            <span>Imagen</span>
+          </div>
+          <div style="padding:22px 22px 26px;display:flex;flex-direction:column;gap:10px;">
+            <span style="font-size:11px;font-weight:700;letter-spacing:2px;color:#9d5cff;font-family:'Chakra Petch',sans-serif;">DISEÑO WEB</span>
+            <h3 style="font-size:19px;font-weight:700;line-height:1.25;color:#fff;font-family:'Chakra Petch',sans-serif;">
+              Microinteracciones: el detalle que enamora
+            </h3>
+            <p style="font-size:14px;line-height:1.55;color:#9aa0ad;font-family:'Chakra Petch',sans-serif;">
+              Pequeñas animaciones que hacen que una web se sienta viva y profesional.
+            </p>
+            <span style="font-size:12px;color:#71757f;margin-top:4px;font-family:'Chakra Petch',sans-serif;">24 Abr 2026 · 4 min</span>
+          </div>
+        </a>
+
+        <!-- Post 6 -->
+        <a href="#" class="blog-card">
+          <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);aspect-ratio:16/10;display:grid;place-items:center;color:#666;">
+            <span>Imagen</span>
+          </div>
+          <div style="padding:22px 22px 26px;display:flex;flex-direction:column;gap:10px;">
+            <span style="font-size:11px;font-weight:700;letter-spacing:2px;color:#2fe4ff;font-family:'Chakra Petch',sans-serif;">BRANDING</span>
+            <h3 style="font-size:19px;font-weight:700;line-height:1.25;color:#fff;font-family:'Chakra Petch',sans-serif;">
+              Del logo al sistema: escalar una identidad
+            </h3>
+            <p style="font-size:14px;line-height:1.55;color:#9aa0ad;font-family:'Chakra Petch',sans-serif;">
+              Cómo construir un sistema visual flexible que funcione en cualquier formato.
+            </p>
+            <span style="font-size:12px;color:#71757f;margin-top:4px;font-family:'Chakra Petch',sans-serif;">5 Abr 2026 · 5 min</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Botón cargar más -->
+      <div style="display:flex;justify-content:center;margin-top:46px;">
+        <button class="load-more-btn">
+          CARGAR MÁS ARTÍCULOS
+        </button>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section style="position:relative;z-index:10;max-width:1360px;margin:0 auto;padding:20px 56px 80px;">
+      <div class="newsletter-box">
+        <h2 style="font-family:'Anton',sans-serif;font-size:40px;color:#fff;letter-spacing:1px;margin-bottom:12px;filter:url(#rough);">
+          NO TE PIERDAS NADA
+        </h2>
+        <p style="font-size:17px;color:#cdd2dc;margin-bottom:28px;font-family:'Chakra Petch',sans-serif;">
+          Recibe nuestras mejores ideas de diseño directo en tu correo.
+        </p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <input 
+            type="email" 
+            placeholder="tu@email.com" 
+            class="newsletter-input"
+          />
+          <button class="newsletter-btn">
+            SUSCRIBIRME
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <Marquee />
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .filter-btn {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #bcc1cc;
+    border: 1px solid rgba(255,255,255,.14);
+    background: transparent;
+    padding: 9px 18px;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all .2s;
+  }
+
+  .filter-btn:hover {
+    border-color: #2fe4ff;
+    color: #2fe4ff;
+  }
+
+  .filter-btn.active {
+    color: #07070b;
+    background: linear-gradient(100deg, #2fe4ff, #9d5cff);
+    border: none;
+  }
+
+  .featured-post {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.1);
+    background: linear-gradient(160deg, #14151b, #0b0b10);
+    text-decoration: none;
+    transition: border-color .3s;
+  }
+
+  .featured-post:hover {
+    border-color: rgba(47,228,255,.5);
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .blog-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.08);
+    background: linear-gradient(160deg, #14151b, #0b0b10);
+    text-decoration: none;
+    transition: border-color .3s;
+  }
+
+  .blog-card:hover {
+    border-color: rgba(47,228,255,.5);
+  }
+
+  .load-more-btn {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #f4f5fa;
+    text-decoration: none;
+    padding: 15px 34px;
+    border-radius: 30px;
+    border: 1.5px solid rgba(255,255,255,.22);
+    background: transparent;
+    cursor: pointer;
+    transition: all .3s;
+  }
+
+  .load-more-btn:hover {
+    border-color: #2fe4ff;
+    color: #2fe4ff;
+  }
+
+  .newsletter-box {
+    border-radius: 16px;
+    padding: 54px 40px;
+    text-align: center;
+    background: radial-gradient(120% 140% at 50% 0%, rgba(157,92,255,.18), transparent 60%), 
+                linear-gradient(160deg, #14151b, #0b0b10);
+    border: 1px solid rgba(255,255,255,.1);
+  }
+
+  .newsletter-input {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 15px;
+    color: #fff;
+    background: #0a0a10;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 30px;
+    padding: 15px 22px;
+    width: 320px;
+    max-width: 100%;
+    outline: none;
+    transition: border-color .2s;
+  }
+
+  .newsletter-input:focus {
+    border-color: #2fe4ff;
+  }
+
+  .newsletter-btn {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(100deg, #2fe4ff, #9d5cff, #ff3ad8);
+    box-shadow: 0 8px 26px rgba(157,92,255,.45);
+    cursor: pointer;
+    transition: filter .2s;
+  }
+
+  .newsletter-btn:hover {
+    filter: brightness(1.1);
+  }
+
+  @media (max-width: 1024px) {
+    .blog-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .featured-post {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .blog-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
