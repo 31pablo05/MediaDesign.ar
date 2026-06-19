@@ -1,109 +1,97 @@
 ---
 ---
 
-<section id="nosotros" class="section-padding bg-black">
-  <div class="container mx-auto px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      {/* Columna Izquierda - Texto */}
-      <div class="space-y-6">
-        <div 
-          class="text-xs tracking-widest uppercase"
-          style="font-family: var(--font-mono); color: var(--color-cyan); letter-spacing: 0.2em;"
-        >
-          SOBRE NOSOTROS
-        </div>
-        
-        <h2 
-          class="text-4xl md:text-5xl font-bold"
-          style="font-family: var(--font-display);"
-        >
-          SOMOS<br/>MEDIA DESIGN
+<section id="nosotros" class="section-padding" style="background:linear-gradient(180deg,#07070b,#0b0b13 50%,#07070b);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center;" class="about-grid">
+
+      <!-- Columna izquierda — texto e stats -->
+      <div>
+        <span style="font-size:13px;font-weight:600;letter-spacing:3px;color:#9d5cff;font-family:'Chakra Petch',sans-serif;">
+          // 03 — SOBRE NOSOTROS
+        </span>
+
+        <h2 style="font-family:'Anton',sans-serif;font-size:54px;letter-spacing:1px;color:#fff;line-height:.98;margin:12px 0 22px;filter:url(#rough);">
+          UN ESTUDIO,<br>MIL IDEAS.
         </h2>
 
-        <p class="text-lg leading-relaxed text-[var(--color-muted)]">
-          Un estudio digital integral fundado en <span class="text-white">Trelew, Patagonia, Argentina</span> 
-          por <span class="text-[var(--color-cyan)]">Yamila Almendra</span> y 
-          <span class="text-[var(--color-magenta)]"> Pablo Proboste</span>. 
-          Combinamos creatividad, técnica y pasión por el diseño para transformar ideas en experiencias digitales únicas.
+        <p style="font-size:18px;line-height:1.6;color:#cdd2dc;margin-bottom:18px;max-width:520px;font-family:'Chakra Petch',sans-serif;">
+          En <strong style="color:#2fe4ff;">Media Design</strong> combinamos diseño, estrategia y tecnología para construir marcas
+          que se sienten vivas en el mundo digital.
         </p>
 
-        <p class="text-lg leading-relaxed text-[var(--color-muted)]">
-          Desde sitios web modernos hasta estrategias de contenido, nos especializamos en llevar 
-          tu marca al siguiente nivel con soluciones personalizadas y profesionales.
+        <p style="font-size:16px;line-height:1.6;color:#9aa0ad;margin-bottom:34px;max-width:520px;font-family:'Chakra Petch',sans-serif;">
+          Fundado en <strong style="color:#fff;">Trelew, Patagonia, Argentina</strong> por
+          <strong style="color:#2fe4ff;">Yamila Almendra</strong> y
+          <strong style="color:#ff3ad8;"> Pablo Proboste</strong>.
+          Trabajamos cada proyecto como una colaboración: entendemos tu visión y la llevamos a cada pantalla con personalidad propia.
         </p>
 
-        {/* Stats */}
-        <div class="grid grid-cols-3 gap-6 pt-6">
-          <div class="text-center">
-            <div 
-              class="text-4xl font-bold mb-2"
-              style="font-family: var(--font-display); color: var(--color-cyan);"
-            >
+        <!-- Stats con gradiente de marca -->
+        <div style="display:grid;grid-template-columns:repeat(3,auto);gap:36px;">
+          <div>
+            <div style="font-family:'Anton',sans-serif;font-size:46px;background:linear-gradient(120deg,#2fe4ff,#ff3ad8);-webkit-background-clip:text;background-clip:text;color:transparent;">
               50+
             </div>
-            <div class="text-sm text-[var(--color-muted)]" style="font-family: var(--font-mono);">
-              Clientes
+            <div style="font-size:13px;letter-spacing:1px;color:#9aa0ad;margin-top:2px;font-family:'Chakra Petch',sans-serif;">
+              CLIENTES
             </div>
           </div>
-          <div class="text-center">
-            <div 
-              class="text-4xl font-bold mb-2"
-              style="font-family: var(--font-display); color: var(--color-magenta);"
-            >
+          <div>
+            <div style="font-family:'Anton',sans-serif;font-size:46px;background:linear-gradient(120deg,#2fe4ff,#ff3ad8);-webkit-background-clip:text;background-clip:text;color:transparent;">
               100+
             </div>
-            <div class="text-sm text-[var(--color-muted)]" style="font-family: var(--font-mono);">
-              Proyectos
+            <div style="font-size:13px;letter-spacing:1px;color:#9aa0ad;margin-top:2px;font-family:'Chakra Petch',sans-serif;">
+              PROYECTOS
             </div>
           </div>
-          <div class="text-center">
-            <div 
-              class="text-4xl font-bold mb-2"
-              style="font-family: var(--font-display); color: var(--color-cyan);"
-            >
+          <div>
+            <div style="font-family:'Anton',sans-serif;font-size:46px;background:linear-gradient(120deg,#2fe4ff,#ff3ad8);-webkit-background-clip:text;background-clip:text;color:transparent;">
               5+
             </div>
-            <div class="text-sm text-[var(--color-muted)]" style="font-family: var(--font-mono);">
-              Años
+            <div style="font-size:13px;letter-spacing:1px;color:#9aa0ad;margin-top:2px;font-family:'Chakra Petch',sans-serif;">
+              AÑOS
             </div>
           </div>
         </div>
       </div>
 
-      {/* Columna Derecha - Fotos del Equipo */}
-      <div class="grid grid-cols-2 gap-6">
-        {/* Yamila */}
-        <div class="text-center">
-          <div 
-            class="aspect-square bg-[var(--color-surface)] rounded-lg border-2 mb-4 flex items-center justify-center overflow-hidden"
-            style="border-color: var(--color-cyan);"
-          >
-            <div class="text-6xl">👩‍💻</div>
+      <!-- Columna derecha — proceso de 3 pasos -->
+      <div style="display:flex;flex-direction:column;gap:16px;">
+
+        <div style="display:flex;gap:18px;align-items:flex-start;padding:22px 24px;border-radius:10px;background:linear-gradient(160deg,#14151b,#0b0b10);border:1px solid rgba(255,255,255,.06);">
+          <span style="font-family:'Anton',sans-serif;font-size:30px;color:#2fe4ff;line-height:1;flex-shrink:0;">01</span>
+          <div>
+            <h3 style="font-size:17px;font-weight:700;color:#fff;margin-bottom:5px;font-family:'Chakra Petch',sans-serif;">Descubrimiento</h3>
+            <p style="font-size:14.5px;line-height:1.5;color:#9aa0ad;font-family:'Chakra Petch',sans-serif;">Escuchamos tus objetivos y analizamos tu mercado.</p>
           </div>
-          <h3 class="text-xl font-bold mb-1" style="font-family: var(--font-display);">
-            Yamila Almendra
-          </h3>
-          <p class="text-sm" style="font-family: var(--font-mono); color: var(--color-cyan);">
-            Diseñadora & Creativa
-          </p>
         </div>
 
-        {/* Pablo */}
-        <div class="text-center">
-          <div 
-            class="aspect-square bg-[var(--color-surface)] rounded-lg border-2 mb-4 flex items-center justify-center overflow-hidden"
-            style="border-color: var(--color-magenta);"
-          >
-            <div class="text-6xl">👨‍💻</div>
+        <div style="display:flex;gap:18px;align-items:flex-start;padding:22px 24px;border-radius:10px;background:linear-gradient(160deg,#14151b,#0b0b10);border:1px solid rgba(255,255,255,.06);">
+          <span style="font-family:'Anton',sans-serif;font-size:30px;color:#9d5cff;line-height:1;flex-shrink:0;">02</span>
+          <div>
+            <h3 style="font-size:17px;font-weight:700;color:#fff;margin-bottom:5px;font-family:'Chakra Petch',sans-serif;">Diseño & Creación</h3>
+            <p style="font-size:14.5px;line-height:1.5;color:#9aa0ad;font-family:'Chakra Petch',sans-serif;">Damos forma a la identidad, la web y el contenido.</p>
           </div>
-          <h3 class="text-xl font-bold mb-1" style="font-family: var(--font-display);">
-            Pablo Proboste
-          </h3>
-          <p class="text-sm" style="font-family: var(--font-mono); color: var(--color-magenta);">
-            Developer & Audiovisual
-          </p>
         </div>
+
+        <div style="display:flex;gap:18px;align-items:flex-start;padding:22px 24px;border-radius:10px;background:linear-gradient(160deg,#14151b,#0b0b10);border:1px solid rgba(255,255,255,.06);">
+          <span style="font-family:'Anton',sans-serif;font-size:30px;color:#ff3ad8;line-height:1;flex-shrink:0;">03</span>
+          <div>
+            <h3 style="font-size:17px;font-weight:700;color:#fff;margin-bottom:5px;font-family:'Chakra Petch',sans-serif;">Lanzamiento & Soporte</h3>
+            <p style="font-size:14.5px;line-height:1.5;color:#9aa0ad;font-family:'Chakra Petch',sans-serif;">Publicamos, medimos y optimizamos para crecer.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  @media (max-width: 1024px) {
+    .about-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

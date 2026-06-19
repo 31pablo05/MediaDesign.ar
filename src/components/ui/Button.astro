@@ -1,18 +1,61 @@
 ---
-const { label, href = "#", variant = "primary", target = "_self" } = Astro.props;
-
-const variants = {
-  primary: "bg-gradient-to-r from-[var(--color-magenta)] to-[var(--color-cyan)] text-black hover:from-[var(--color-cyan)] hover:to-[var(--color-magenta)] border-none",
-  outline: "border border-[var(--color-cyan)] text-[var(--color-cyan)] bg-transparent hover:bg-[var(--color-cyan)] hover:text-black"
-};
-
-const variantClass = variants[variant as keyof typeof variants] || variants.primary;
+const { label, href = '#', variant = 'primary', target = '_self' } = Astro.props;
 ---
 
-<a 
-  href={href} 
-  target={target}
-  class={`inline-block px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:-translate-y-1 ${variantClass}`}
->
-  {label}
-</a>
+{variant === 'primary' ? (
+  <a
+    href={href}
+    target={target}
+    class="btn-primary"
+  >
+    {label}
+  </a>
+) : (
+  <a
+    href={href}
+    target={target}
+    class="btn-outline"
+  >
+    {label}
+  </a>
+)}
+
+<style>
+  .btn-primary {
+    display: inline-block;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    background: linear-gradient(100deg, #2fe4ff, #9d5cff, #ff3ad8);
+    box-shadow: 0 8px 26px rgba(157,92,255,.45);
+    transition: filter .2s, box-shadow .2s;
+  }
+  .btn-primary:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 10px 32px rgba(157,92,255,.6);
+  }
+
+  .btn-outline {
+    display: inline-block;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #f4f5fa;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    border: 1.5px solid rgba(255,255,255,.22);
+    background: rgba(255,255,255,.02);
+    transition: border-color .2s, color .2s;
+  }
+  .btn-outline:hover {
+    border-color: #2fe4ff;
+    color: #2fe4ff;
+  }
+</style>

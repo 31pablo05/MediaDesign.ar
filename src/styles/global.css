@@ -1,32 +1,50 @@
 @import "tailwindcss";
 
 /* ========================================
-   VARIABLES CSS
+   DESIGN TOKENS
    ======================================== */
 
 :root {
-  /* Colores */
-  --color-bg: #000000;
-  --color-bg-deep: #0a0e1a;
-  --color-surface: #111318;
-  --color-primary: #18375d;
-  --color-cyan: #00ffff;
-  --color-magenta: #ff00ff;
+  /* Backgrounds */
+  --color-bg: #07070b;
+  --color-bg-deep: #0a0a10;
+  --color-surface: #14151b;
+  --color-card-to: #0b0b10;
+  --color-card-alt: #0c0c12;
+
+  /* Accents */
+  --color-cyan: #2fe4ff;
+  --color-purple: #9d5cff;
+  --color-magenta: #ff3ad8;
+  --color-green: #57ff7a;
   --color-white: #ffffff;
-  --color-muted: rgba(245, 245, 245, 0.45);
 
-  /* Fuentes */
-  --font-display: Impact, sans-serif;
-  --font-mono: 'Share Tech Mono', monospace;
-  --font-body: 'Space Grotesk', Helvetica, sans-serif;
+  /* Text */
+  --color-text-primary: #f4f5fa;
+  --color-text-secondary: #cdd2dc;
+  --color-text-body: #e7e9f0;
+  --color-muted: #9aa0ad;
+  --color-dim: #71757f;
+  --color-nav: #bcc1cc;
 
-  /* Bordes */
+  /* Brand gradient */
+  --brand-gradient: linear-gradient(100deg, #2fe4ff, #9d5cff, #ff3ad8);
+
+  /* Fonts */
+  --font-display: 'Anton', sans-serif;
+  --font-body: 'Chakra Petch', sans-serif;
+  --font-mono: 'Chakra Petch', sans-serif;
+
+  /* Radii */
   --radius: 8px;
-  --radius-lg: 16px;
+  --radius-lg: 14px;
+  --radius-pill: 30px;
 
-  /* Sombras neón */
-  --shadow-neon-cyan: 0 0 5px rgba(0, 255, 255, 0.8), 0 0 10px rgba(0, 255, 255, 0.6), 0 0 20px rgba(0, 255, 255, 0.4), 0 0 40px rgba(0, 255, 255, 0.2);
-  --shadow-neon-magenta: 0 0 5px rgba(255, 0, 255, 0.8), 0 0 10px rgba(255, 0, 255, 0.6), 0 0 20px rgba(255, 0, 255, 0.4), 0 0 40px rgba(255, 0, 255, 0.2);
+  /* Shadows */
+  --shadow-card-hover: 0 18px 40px rgba(0,0,0,.5), 0 0 22px rgba(47,228,255,.12);
+  --shadow-neon-cyan: 0 0 14px rgba(47,228,255,.35);
+  --shadow-neon-magenta: 0 0 14px rgba(255,58,216,.35);
+  --shadow-form: 0 24px 60px rgba(0,0,0,.5);
 }
 
 /* ========================================
@@ -39,230 +57,149 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  background: #07070b;
+}
+
 body {
   background-color: var(--color-bg);
-  color: var(--color-white);
+  color: var(--color-text-primary);
   font-family: var(--font-body);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #ff3ad8;
+  color: #fff;
+}
+
+section[id] {
+  scroll-margin-top: 80px;
 }
 
 /* ========================================
-   ANIMACIONES KEYFRAMES
+   KEYFRAMES
    ======================================== */
 
-@keyframes glitch {
-  0% {
-    clip-path: inset(40% 0 61% 0);
-    transform: translate(-3px, 3px);
-  }
-  5% {
-    clip-path: inset(92% 0 1% 0);
-    transform: translate(3px, -2px);
-  }
-  10% {
-    clip-path: inset(43% 0 1% 0);
-    transform: translate(-2px, 2px);
-  }
-  15% {
-    clip-path: inset(25% 0 58% 0);
-    transform: translate(3px, -3px);
-  }
-  20% {
-    clip-path: inset(54% 0 7% 0);
-    transform: translate(-3px, 2px);
+/* Glitch del prototipo: text-shadow cian/magenta + microtranslaciones */
+@keyframes mdGlitch {
+  0%, 100% {
+    transform: translate(0, 0);
+    text-shadow: -3px 0 #2fe4ff, 3px 0 #ff3ad8;
   }
   25% {
-    clip-path: inset(58% 0 43% 0);
-    transform: translate(2px, -2px);
-  }
-  30% {
-    clip-path: inset(45% 0 40% 0);
-    transform: translate(-2px, 3px);
-  }
-  35% {
-    clip-path: inset(41% 0 1% 0);
-    transform: translate(3px, -3px);
-  }
-  40% {
-    clip-path: inset(56% 0 23% 0);
-    transform: translate(-3px, 2px);
-  }
-  45% {
-    clip-path: inset(68% 0 11% 0);
-    transform: translate(2px, -2px);
+    transform: translate(1px, -1px);
+    text-shadow: -4px 0 #2fe4ff, 2px 1px #ff3ad8;
   }
   50% {
-    clip-path: inset(6% 0 92% 0);
-    transform: translate(-2px, 3px);
-  }
-  55% {
-    clip-path: inset(33% 0 45% 0);
-    transform: translate(3px, -2px);
-  }
-  60% {
-    clip-path: inset(78% 0 12% 0);
-    transform: translate(-3px, 3px);
-  }
-  65% {
-    clip-path: inset(15% 0 70% 0);
-    transform: translate(2px, -3px);
-  }
-  70% {
-    clip-path: inset(50% 0 35% 0);
-    transform: translate(-2px, 2px);
+    transform: translate(-1px, 1px);
+    text-shadow: -2px -1px #2fe4ff, 4px 0 #ff3ad8;
   }
   75% {
-    clip-path: inset(22% 0 60% 0);
-    transform: translate(3px, -2px);
-  }
-  80% {
-    clip-path: inset(65% 0 20% 0);
-    transform: translate(-3px, 3px);
-  }
-  85% {
-    clip-path: inset(38% 0 48% 0);
-    transform: translate(2px, -3px);
-  }
-  90% {
-    clip-path: inset(72% 0 18% 0);
-    transform: translate(-2px, 2px);
-  }
-  95% {
-    clip-path: inset(28% 0 55% 0);
-    transform: translate(3px, -2px);
-  }
-  100% {
-    clip-path: inset(6% 0 92% 0);
-    transform: translate(0);
+    transform: translate(1px, 0);
+    text-shadow: -3px 1px #2fe4ff, 3px -1px #ff3ad8;
   }
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+/* Marquee */
+@keyframes mdMarquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
-@keyframes blink {
-  0%, 49% {
-    opacity: 1;
-  }
-  50%, 100% {
-    opacity: 0;
-  }
+/* Stickers flotantes */
+@keyframes mdFloatA {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50%       { transform: translateY(-16px) rotate(-4deg); }
+}
+@keyframes mdFloatB {
+  0%, 100% { transform: translateY(0) rotate(8deg); }
+  50%       { transform: translateY(-22px) rotate(8deg); }
+}
+@keyframes mdFloatC {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
 }
 
+/* Scanlines CRT */
+@keyframes mdScan {
+  from { background-position: 0 0; }
+  to   { background-position: 0 6px; }
+}
+
+/* LED pulsante */
+@keyframes mdPulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 10px 2px #57ff7a; }
+  50%       { opacity: .55; box-shadow: 0 0 4px 1px #57ff7a; }
+}
+
+/* Flicker sutil (CRT) */
+@keyframes mdFlick {
+  0%, 97%, 100% { opacity: 1; }
+  98%            { opacity: .7; }
+}
+
+/* fadeUp genérico */
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ========================================
-   CLASES ESPECIALES
-   ======================================== */
-
-.glitch {
-  position: relative;
-  display: inline-block;
-}
-
-.glitch::before,
-.glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.8;
-}
-
-.glitch::before {
-  color: var(--color-cyan);
-  animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-  z-index: -1;
-  text-shadow: 2px 0 var(--color-cyan);
-}
-
-.glitch::after {
-  color: var(--color-magenta);
-  animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse infinite;
-  z-index: -2;
-  text-shadow: -2px 0 var(--color-magenta);
-}
-
-.glitch:hover::before,
-.glitch:hover::after {
-  animation-duration: 0.2s;
-  opacity: 1;
-}
-
-.neon-text {
-  text-shadow: var(--shadow-neon-cyan);
-}
-
-.neon-border {
-  box-shadow: var(--shadow-neon-cyan);
-}
-
-/* ========================================
-   SCROLLBAR PERSONALIZADO
-   ======================================== */
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-bg);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-cyan);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-magenta);
-}
-
-/* ========================================
-   UTILIDADES
+   UTILITARIOS
    ======================================== */
 
 .container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1360px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 56px;
 }
 
 .section-padding {
-  padding: 5rem 0;
+  padding: 88px 0;
 }
 
-@media (max-width: 768px) {
-  .section-padding {
-    padding: 3rem 0;
-  }
+/* Texto con gradiente de marca */
+.brand-text {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Kicker de sección */
+.section-kicker {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--color-purple);
+  font-family: var(--font-body);
+}
+
+/* ========================================
+   SCROLLBAR
+   ======================================== */
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-cyan); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-magenta); }
+
+/* ========================================
+   RESPONSIVE HELPERS
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .container { padding: 0 32px; }
+  .section-padding { padding: 64px 0; }
+}
+
+@media (max-width: 640px) {
+  .container { padding: 0 20px; }
+  .section-padding { padding: 48px 0; }
 }

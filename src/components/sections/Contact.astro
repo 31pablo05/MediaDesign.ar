@@ -1,67 +1,78 @@
 ---
+import ContactForm from '../ui/ContactForm';
 ---
 
-<section id="contacto" class="section-padding bg-[var(--color-bg-deep)]">
-  <div class="container mx-auto px-6">
-    <div class="max-w-3xl mx-auto text-center">
-      {/* Encabezado */}
-      <div 
-        class="text-xs tracking-widest mb-4 uppercase"
-        style="font-family: var(--font-mono); color: var(--color-cyan); letter-spacing: 0.2em;"
-      >
-        HABLEMOS DE TU PROYECTO
+<section id="contacto" class="section-padding" style="background:#07070b;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:56px;align-items:start;" class="contact-grid">
+
+      <!-- Izquierda — info de contacto -->
+      <div>
+        <span style="font-size:13px;font-weight:600;letter-spacing:3px;color:#9d5cff;font-family:'Chakra Petch',sans-serif;">
+          // 04 — CONTACTO
+        </span>
+
+        <h2 style="font-family:'Anton',sans-serif;font-size:54px;letter-spacing:1px;color:#fff;line-height:.98;margin:12px 0 22px;filter:url(#rough);">
+          HABLEMOS DE<br>TU PROYECTO.
+        </h2>
+
+        <p style="font-size:17px;line-height:1.6;color:#cdd2dc;max-width:440px;margin-bottom:34px;font-family:'Chakra Petch',sans-serif;">
+          ¿Tenés una idea en mente? Contanos qué necesitás y te respondemos en menos de 24 horas.
+        </p>
+
+        <div style="display:flex;flex-direction:column;gap:16px;">
+
+          <!-- WhatsApp -->
+          <a
+            href="https://wa.me/5492805123541"
+            target="_blank"
+            rel="noopener"
+            class="contact-link"
+            style="display:flex;align-items:center;gap:14px;text-decoration:none;color:#e7e9f0;"
+          >
+            <span style="display:grid;place-items:center;width:42px;height:42px;border-radius:10px;border:1px solid rgba(87,255,122,.4);background:rgba(87,255,122,.08);flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#57ff7a" stroke-width="2">
+                <path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"/>
+              </svg>
+            </span>
+            <span style="font-size:15.5px;font-weight:500;font-family:'Chakra Petch',sans-serif;">280-5 12 35 41</span>
+          </a>
+
+          <!-- Instagram -->
+          <a
+            href="https://instagram.com/mediadesign.ar"
+            target="_blank"
+            rel="noopener"
+            class="contact-link"
+            style="display:flex;align-items:center;gap:14px;text-decoration:none;color:#e7e9f0;"
+          >
+            <span style="display:grid;place-items:center;width:42px;height:42px;border-radius:10px;border:1px solid rgba(255,58,216,.4);background:rgba(255,58,216,.08);flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff3ad8" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="#ff3ad8" stroke="none"/>
+              </svg>
+            </span>
+            <span style="font-size:15.5px;font-weight:500;font-family:'Chakra Petch',sans-serif;">@mediadesign.ar</span>
+          </a>
+
+          <p style="font-size:13px;color:#71757f;margin-top:8px;font-family:'Chakra Petch',sans-serif;">
+            Respondemos de lunes a viernes de 9:00 a 18:00 hs (GMT-3)
+          </p>
+        </div>
       </div>
-      
-      <h2 
-        class="text-5xl md:text-6xl font-bold mb-12"
-        style="font-family: var(--font-display);"
-      >
-        ¿HABLAMOS?
-      </h2>
 
-      {/* Botones de Contacto */}
-      <div class="flex flex-col sm:flex-row gap-6 justify-center mb-8">
-        {/* WhatsApp */}
-        <a
-          href="https://wa.me/5492805123541"
-          target="_blank"
-          class="flex items-center justify-center gap-3 px-8 py-4 rounded-lg border-2 transition-all duration-300 hover:-translate-y-1"
-          style="border-color: var(--color-cyan); background: transparent;"
-        >
-          <span class="text-3xl">📱</span>
-          <div class="text-left">
-            <div class="text-xs text-[var(--color-muted)] uppercase" style="font-family: var(--font-mono);">
-              WhatsApp
-            </div>
-            <div class="text-lg font-bold" style="font-family: var(--font-mono); color: var(--color-cyan);">
-              280-5 12 35 41
-            </div>
-          </div>
-        </a>
+      <!-- Derecha — formulario (React island) -->
+      <ContactForm client:load />
 
-        {/* Instagram */}
-        <a
-          href="https://instagram.com/mediadesign.ar"
-          target="_blank"
-          class="flex items-center justify-center gap-3 px-8 py-4 rounded-lg border-2 transition-all duration-300 hover:-translate-y-1"
-          style="border-color: var(--color-magenta); background: transparent;"
-        >
-          <span class="text-3xl">📸</span>
-          <div class="text-left">
-            <div class="text-xs text-[var(--color-muted)] uppercase" style="font-family: var(--font-mono);">
-              Instagram
-            </div>
-            <div class="text-lg font-bold" style="font-family: var(--font-mono); color: var(--color-magenta);">
-              @mediadesign.ar
-            </div>
-          </div>
-        </a>
-      </div>
-
-      {/* Texto adicional */}
-      <p class="text-sm text-[var(--color-muted)]" style="font-family: var(--font-mono);">
-        Respondemos de lunes a viernes de 9:00 a 18:00 hs (GMT-3)
-      </p>
     </div>
   </div>
 </section>
+
+<style>
+  .contact-link:hover { color: #2fe4ff; }
+
+  @media (max-width: 1024px) {
+    .contact-grid { grid-template-columns: 1fr !important; }
+  }
+</style>

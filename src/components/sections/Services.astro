@@ -2,61 +2,57 @@
 import ServiceCard from '../ui/ServiceCard.astro';
 ---
 
-<section id="servicios" class="section-padding bg-black">
-  <div class="container mx-auto px-6">
-    {/* Encabezado */}
-    <div class="text-center mb-12">
-      <div 
-        class="text-xs tracking-widest mb-4 uppercase"
-        style="font-family: var(--font-mono); color: var(--color-cyan); letter-spacing: 0.2em;"
-      >
-        SOLUCIONES CREATIVAS PARA TU MARCA
-      </div>
-      <h2 
-        class="text-4xl md:text-5xl font-bold"
-        style="font-family: var(--font-display);"
-      >
-        NUESTROS SERVICIOS
+<section id="servicios" class="section-padding" style="background:#07070b;">
+  <div class="container">
+
+    <!-- Encabezado -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:34px;">
+      <span style="font-size:13px;font-weight:600;letter-spacing:3px;color:#9d5cff;font-family:'Chakra Petch',sans-serif;">
+        // 01 — SERVICIOS
+      </span>
+      <h2 style="text-align:center;font-size:26px;font-weight:700;letter-spacing:3px;color:#2fe4ff;text-shadow:0 0 14px rgba(47,228,255,.4);font-family:'Chakra Petch',sans-serif;">
+        SOLUCIONES CREATIVAS PARA TU MARCA.
       </h2>
     </div>
 
-    {/* Grid de Servicios */}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <ServiceCard 
-        icon="🌐"
+    <!-- Grid de servicios -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:22px;">
+      <ServiceCard
+        icon="web"
         title="DISEÑO WEB"
         description="Sitios modernos, rápidos y adaptados a tu marca."
       />
-      <ServiceCard 
-        icon="📄"
+      <ServiceCard
+        icon="landing"
         title="LANDING PAGES"
         description="Páginas de aterrizaje optimizadas para conversión."
       />
-      <ServiceCard 
-        icon="🛒"
+      <ServiceCard
+        icon="ecommerce"
         title="TIENDAS ONLINE"
         description="E-commerce funcional y atractivo para vender más."
       />
-      <ServiceCard 
-        icon="📱"
+      <ServiceCard
+        icon="redes"
         title="GESTIÓN DE REDES"
         description="Estrategia, contenido y gestión de redes sociales."
       />
-      <ServiceCard 
-        icon="🎨"
+      <ServiceCard
+        icon="grafico"
         title="DISEÑO GRÁFICO"
         description="Piezas visuales que comunican tu mensaje."
       />
-      <ServiceCard 
-        icon="✨"
+      <ServiceCard
+        icon="branding"
         title="BRANDING"
         description="Identidad visual y posicionamiento de marca."
       />
-      <ServiceCard 
-        icon="🎬"
+      <ServiceCard
+        icon="audiovisual"
         title="CONTENIDO AUDIOVISUAL"
         description="Videos, reels y producciones de alto impacto."
       />
     </div>
+
   </div>
 </section>

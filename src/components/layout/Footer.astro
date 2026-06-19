@@ -1,89 +1,63 @@
 ---
 ---
 
-<footer class="bg-[var(--color-bg-deep)] border-t border-[var(--color-cyan)]/20 mt-20">
-  <div class="container mx-auto px-6 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-      {/* Columna Izquierda - Logo e Info */}
-      <div>
-        <div class="mb-4">
-          <img 
-            src="/logo2.jpeg" 
-            alt="Media Design - Estudio Digital Integral" 
-            class="h-16 w-auto mb-2"
-          />
-        </div>
-        <p class="text-xs text-[var(--color-muted)] mt-4" style="font-family: var(--font-mono);">
-          Trelew · Patagonia · Argentina
-        </p>
+<footer style="position:relative;z-index:10;border-top:1px solid rgba(255,255,255,.08);background:#0a0a10;">
+  <div class="container">
+
+    <!-- Bloque principal -->
+    <div style="padding:46px 0 0;display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap;">
+
+      <!-- Logo + tagline -->
+      <div style="display:flex;flex-direction:column;line-height:.82;">
+        <span style="font-family:'Anton',sans-serif;font-size:30px;color:#fff;filter:url(#rough);">MEDIA</span>
+        <span style="font-family:'Anton',sans-serif;font-size:30px;color:#fff;filter:url(#rough);">DESIGN</span>
+        <span style="margin-top:8px;font-size:13px;color:#9aa0ad;max-width:240px;line-height:1.5;font-family:'Chakra Petch',sans-serif;">
+          Estudio digital integral. Trelew, Patagonia, Argentina.
+        </span>
       </div>
 
-      {/* Columna Central - Links */}
-      <div>
-        <h4 class="text-sm font-bold mb-4 text-white" style="font-family: var(--font-body);">
-          Navegación
-        </h4>
-        <ul class="space-y-2">
-          <li>
-            <a href="#servicios" class="text-sm text-[var(--color-muted)] hover:text-white transition-colors">
-              Servicios
-            </a>
-          </li>
-          <li>
-            <a href="#nosotros" class="text-sm text-[var(--color-muted)] hover:text-white transition-colors">
-              Nosotros
-            </a>
-          </li>
-          <li>
-            <a href="#portfolio" class="text-sm text-[var(--color-muted)] hover:text-white transition-colors">
-              Portfolio
-            </a>
-          </li>
-          <li>
-            <a href="#contacto" class="text-sm text-[var(--color-muted)] hover:text-white transition-colors">
-              Contacto
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      {/* Columna Derecha - Contacto */}
-      <div>
-        <h4 class="text-sm font-bold mb-4 text-white" style="font-family: var(--font-body);">
-          Contacto
-        </h4>
-        <div class="space-y-2">
-          <a 
-            href="https://wa.me/5492805123541" 
-            target="_blank"
-            class="flex items-center gap-2 text-sm text-[var(--color-muted)] hover:text-white transition-colors"
-          >
-            <span>📱</span>
-            <span>280-5 12 35 41</span>
-          </a>
-          <a 
-            href="https://instagram.com/mediadesign.ar" 
-            target="_blank"
-            class="flex items-center gap-2 text-sm text-[var(--color-muted)] hover:text-white transition-colors"
-          >
-            <span>📸</span>
-            <span>@mediadesign.ar</span>
-          </a>
+      <!-- Navegación -->
+      <nav style="display:flex;gap:60px;flex-wrap:wrap;">
+        <div style="display:flex;flex-direction:column;gap:11px;">
+          <span style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#2fe4ff;margin-bottom:3px;font-family:'Chakra Petch',sans-serif;">
+            NAVEGACIÓN
+          </span>
+          <a href="#inicio"    class="footer-link">Inicio</a>
+          <a href="#servicios" class="footer-link">Servicios</a>
+          <a href="#portfolio" class="footer-link">Proyectos</a>
         </div>
-      </div>
+        <div style="display:flex;flex-direction:column;gap:11px;">
+          <span style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#2fe4ff;margin-bottom:3px;font-family:'Chakra Petch',sans-serif;">
+            MÁS
+          </span>
+          <a href="#nosotros" class="footer-link">Sobre nosotros</a>
+          <a href="#contacto" class="footer-link">Contacto</a>
+          <a href="https://instagram.com/mediadesign.ar" target="_blank" rel="noopener" class="footer-link">Instagram</a>
+        </div>
+      </nav>
+
     </div>
 
-    {/* Línea Divisoria */}
-    <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-xs text-[var(--color-muted)]" style="font-family: var(--font-mono);">
-        © 2026 Yamila Almendra · Pablo Proboste
-      </p>
-      <p 
-        class="text-xs" 
-        style="font-family: var(--font-mono); color: var(--color-cyan); opacity: 0.5;"
-      >
-        ⚡ hecho por nosotros
-      </p>
+    <!-- Línea inferior -->
+    <div style="border-top:1px solid rgba(255,255,255,.06);margin-top:30px;padding:20px 0 30px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+      <span style="font-size:13px;color:#71757f;font-family:'Chakra Petch',sans-serif;">
+        © 2026 Media Design — Todos los derechos reservados.
+      </span>
+      <span style="font-size:13px;color:#71757f;font-family:'Chakra Petch',sans-serif;">
+        Hecho con ♥ pixeles y café.
+      </span>
     </div>
+
   </div>
 </footer>
+
+<style>
+  .footer-link {
+    font-size: 14px;
+    color: #bcc1cc;
+    text-decoration: none;
+    font-family: 'Chakra Petch', sans-serif;
+    transition: color .2s;
+  }
+  .footer-link:hover { color: #fff; }
+</style>

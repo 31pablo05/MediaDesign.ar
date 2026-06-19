@@ -5,134 +5,171 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'INICIO', href: '#inicio' },
-    { name: 'SERVICIOS', href: '#servicios' },
-    { name: 'PROYECTOS', href: '#portfolio' },
-    { name: 'SOBRE NOSOTROS', href: '#nosotros' },
-    { name: 'BLOG', href: '#blog' }
+    { name: 'INICIO',          href: '#inicio' },
+    { name: 'SERVICIOS',       href: '#servicios' },
+    { name: 'PROYECTOS',       href: '#portfolio' },
+    { name: 'SOBRE NOSOTROS',  href: '#nosotros' },
+    { name: 'BLOG',            href: '#blog' },
   ];
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-black/80 backdrop-blur-md' : 'bg-black/50 backdrop-blur-sm'
-      }`}
-      style={{ borderBottom: '1px solid rgba(0, 255, 255, 0.2)' }}
+    <header
+      style={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 50,
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)',
+        background: isScrolled ? 'rgba(7,7,11,.86)' : 'rgba(7,7,11,.72)',
+        borderBottom: '1px solid rgba(255,255,255,.06)',
+        transition: 'background .3s',
+      }}
     >
-      <nav className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <a href="#" className="flex items-center">
-            <img 
-              src="/logo2.jpeg" 
-              alt="Media Design - Estudio Digital Integral" 
-              className="h-12 w-auto"
-            />
-          </a>
+      <div
+        style={{
+          maxWidth: 1360,
+          margin: '0 auto',
+          padding: '18px 56px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: 24,
+        }}
+      >
+        {/* Logo */}
+        <a href="#inicio" style={{ display: 'flex', flexDirection: 'column', lineHeight: .82, textDecoration: 'none' }}>
+          <span style={{ fontFamily: "'Anton', sans-serif", fontSize: 30, letterSpacing: 1, color: '#fff', filter: 'url(#rough)' }}>
+            MEDIA
+          </span>
+          <span style={{ fontFamily: "'Anton', sans-serif", fontSize: 30, letterSpacing: 1, color: '#fff', filter: 'url(#rough)' }}>
+            DESIGN
+          </span>
+        </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map(link => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-sm text-white/70 hover:text-white transition-colors relative group"
-                style={{ fontFamily: 'var(--font-body)' }}
-              >
-                {link.name}
-                <span 
-                  className="absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300"
-                  style={{ backgroundColor: 'var(--color-cyan)' }}
-                />
-              </a>
-            ))}
+        {/* Desktop nav */}
+        <nav style={{ display: 'flex', alignItems: 'center', gap: 34, whiteSpace: 'nowrap' }} className="hidden md:flex">
+          {navLinks.map(link => (
+            <a
+              key={link.name}
+              href={link.href}
+              style={{
+                fontSize: 13.5,
+                fontWeight: 500,
+                letterSpacing: '1.5px',
+                color: '#bcc1cc',
+                textDecoration: 'none',
+                fontFamily: "'Chakra Petch', sans-serif",
+                transition: 'color .2s',
+              }}
+              onMouseEnter={e => (e.currentTarget.style.color = '#2fe4ff')}
+              onMouseLeave={e => (e.currentTarget.style.color = '#bcc1cc')}
+            >
+              {link.name}
+            </a>
+          ))}
+        </nav>
+
+        {/* CTA desktop */}
+        <a
+          href="#contacto"
+          className="hidden md:block"
+          style={{
+            fontSize: 13.5,
+            fontWeight: 600,
+            letterSpacing: '1.5px',
+            color: '#fff',
+            textDecoration: 'none',
+            padding: '11px 24px',
+            border: '1.5px solid #9d5cff',
+            borderRadius: 30,
+            boxShadow: '0 0 14px rgba(157,92,255,.35) inset, 0 0 14px rgba(157,92,255,.25)',
+            fontFamily: "'Chakra Petch', sans-serif",
+            transition: 'background .2s, box-shadow .2s',
+          }}
+          onMouseEnter={e => {
+            e.currentTarget.style.background = 'rgba(157,92,255,.18)';
+            e.currentTarget.style.boxShadow = '0 0 20px rgba(157,92,255,.5)';
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.background = 'transparent';
+            e.currentTarget.style.boxShadow = '0 0 14px rgba(157,92,255,.35) inset, 0 0 14px rgba(157,92,255,.25)';
+          }}
+        >
+          CONTACTO
+        </a>
+
+        {/* Hamburguesa mobile */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden"
+          aria-label="Abrir menú"
+          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 8 }}
+        >
+          <div style={{ width: 24, height: 20, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <span style={{ display: 'block', width: '100%', height: 2, background: '#2fe4ff', borderRadius: 2, transition: 'transform .25s, opacity .25s', transform: isMenuOpen ? 'rotate(45deg) translate(6px,6px)' : 'none' }} />
+            <span style={{ display: 'block', width: '100%', height: 2, background: '#2fe4ff', borderRadius: 2, transition: 'opacity .25s', opacity: isMenuOpen ? 0 : 1 }} />
+            <span style={{ display: 'block', width: '100%', height: 2, background: '#2fe4ff', borderRadius: 2, transition: 'transform .25s', transform: isMenuOpen ? 'rotate(-45deg) translate(6px,-6px)' : 'none' }} />
           </div>
+        </button>
+      </div>
 
-          {/* Contact Button (Desktop) */}
+      {/* Mobile menu */}
+      {isMenuOpen && (
+        <div
+          style={{
+            background: 'rgba(7,7,11,.96)',
+            borderTop: '1px solid rgba(255,255,255,.06)',
+            padding: '20px 24px 28px',
+          }}
+        >
+          {navLinks.map(link => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={() => setIsMenuOpen(false)}
+              style={{
+                display: 'block',
+                padding: '14px 0',
+                fontSize: 13.5,
+                fontWeight: 500,
+                letterSpacing: '1.5px',
+                color: '#bcc1cc',
+                textDecoration: 'none',
+                fontFamily: "'Chakra Petch', sans-serif",
+                borderBottom: '1px solid rgba(255,255,255,.05)',
+              }}
+            >
+              {link.name}
+            </a>
+          ))}
           <a
             href="#contacto"
-            className="hidden md:block px-6 py-2 border-2 rounded transition-all duration-200"
-            style={{ 
-              borderColor: 'var(--color-magenta)', 
-              color: 'var(--color-magenta)',
-              fontFamily: 'var(--font-body)',
-              backgroundColor: 'transparent'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--color-magenta)';
-              e.currentTarget.style.color = 'black';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
-              e.currentTarget.style.color = 'var(--color-magenta)';
+            onClick={() => setIsMenuOpen(false)}
+            style={{
+              display: 'block',
+              marginTop: 20,
+              padding: '14px 0',
+              textAlign: 'center',
+              fontSize: 13.5,
+              fontWeight: 600,
+              letterSpacing: '1.5px',
+              color: '#fff',
+              textDecoration: 'none',
+              border: '1.5px solid #9d5cff',
+              borderRadius: 30,
+              fontFamily: "'Chakra Petch', sans-serif",
             }}
           >
             CONTACTO
           </a>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-white p-2"
-            aria-label="Toggle menu"
-          >
-            <div className="w-6 h-5 flex flex-col justify-between">
-              <span 
-                className={`w-full h-0.5 bg-[var(--color-cyan)] transition-transform ${
-                  isMenuOpen ? 'rotate-45 translate-y-2' : ''
-                }`}
-              />
-              <span 
-                className={`w-full h-0.5 bg-[var(--color-cyan)] transition-opacity ${
-                  isMenuOpen ? 'opacity-0' : ''
-                }`}
-              />
-              <span 
-                className={`w-full h-0.5 bg-[var(--color-cyan)] transition-transform ${
-                  isMenuOpen ? '-rotate-45 -translate-y-2' : ''
-                }`}
-              />
-            </div>
-          </button>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-4 pt-4 border-t border-[var(--color-cyan)]/20">
-            {navLinks.map(link => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsMenuOpen(false)}
-                className="block py-3 text-white/70 hover:text-white transition-colors"
-                style={{ fontFamily: 'var(--font-body)' }}
-              >
-                {link.name}
-              </a>
-            ))}
-            <a
-              href="#contacto"
-              onClick={() => setIsMenuOpen(false)}
-              className="block mt-4 px-6 py-2 border-2 text-center transition-all duration-200"
-              style={{ 
-                borderColor: 'var(--color-magenta)', 
-                color: 'var(--color-magenta)',
-                fontFamily: 'var(--font-body)'
-              }}
-            >
-              CONTACTO
-            </a>
-          </div>
-        )}
-      </nav>
+      )}
     </header>
   );
 }

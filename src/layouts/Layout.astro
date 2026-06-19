@@ -11,18 +11,33 @@ const { title, description, ogImage } = Astro.props;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title} | Media Design</title>
   <meta name="description" content={description}>
-  
+
   <!-- Open Graph -->
   <meta property="og:title" content={`${title} | Media Design`}>
   <meta property="og:description" content={description}>
   {ogImage && <meta property="og:image" content={ogImage}>}
-  
-  <!-- Google Fonts -->
+
+  <!-- Google Fonts: Anton + Chakra Petch -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Chakra+Petch:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- SVG defs globales: gradiente de marca (#ig) y filtro grunge (#rough) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="ig" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#2fe4ff"/>
+        <stop offset="0.5" stop-color="#9d5cff"/>
+        <stop offset="1" stop-color="#ff3ad8"/>
+      </linearGradient>
+      <filter id="rough">
+        <feTurbulence type="fractalNoise" baseFrequency="0.012 0.16" numOctaves="2" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="4"/>
+      </filter>
+    </defs>
+  </svg>
+
   <slot />
 </body>
 </html>
