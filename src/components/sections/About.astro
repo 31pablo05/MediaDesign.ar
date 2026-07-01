@@ -85,6 +85,36 @@
 
       </div>
     </div>
+
+    <div class="team-block">
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:22px;" class="team-grid">
+        <div class="team-card">
+          <div class="team-card__photo-wrapper">
+            <div class="team-card__photo">
+              <img src="/nosotros/yami2.png" alt="Yamila Almendra" class="team-card__photo-img" />
+            </div>
+          </div>
+          <div style="padding:24px;">
+            <h3 class="team-card__name">Yamila Almendra</h3>
+            <div class="team-card__role" style="color:#2fe4ff;">Directora Creativa</div>
+            <p class="team-card__desc">Lidera la dirección artística, los conceptos visuales y la identidad de marca para cada proyecto.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card__photo-wrapper">
+            <div class="team-card__photo">
+              <img src="/nosotros/pablo2.jpg" alt="Pablo Proboste" class="team-card__photo-img" />
+            </div>
+          </div>
+          <div style="padding:24px;">
+            <h3 class="team-card__name">Pablo Proboste</h3>
+            <div class="team-card__role" style="color:#ff3ad8;">Director de Estrategia</div>
+            <p class="team-card__desc">Diseña la estrategia digital, el contenido y la experiencia para que cada marca conecte con su público.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -93,5 +123,58 @@
     .about-grid {
       grid-template-columns: 1fr !important;
     }
+    .team-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+  .team-card {
+    background: linear-gradient(160deg, #14151b, #0b0b10);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color .25s;
+  }
+  .team-card:hover {
+    border-color: rgba(47,228,255,.5);
+  }
+  .team-card__photo-wrapper {
+    padding: 4px;
+    background: linear-gradient(120deg, #2fe4ff, #ff3ad8);
+  }
+  .team-card__photo {
+    background: linear-gradient(160deg, #14151b, #0b0b10);
+    border-radius: 14px;
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .team-card__photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .team-card__name {
+    font-family: 'Anton', sans-serif;
+    font-size: 24px;
+    color: #fff;
+    margin: 20px 0 8px;
+  }
+  .team-card__role {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 12.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .team-card__desc {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #9aa0ad;
+    margin: 0;
   }
 </style>

@@ -13,7 +13,7 @@ import Button from '../ui/Button.astro';
   <div style="position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(120% 90% at 70% 30%,#000 35%,transparent 80%);-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 35%,transparent 80%);"></div>
 
   <div class="container">
-    <div style="display:grid; grid-template-columns: minmax(0,1.08fr) minmax(0,1fr); gap:40px; align-items:center;">
+    <div class="hero-grid">
 
       <!-- Columna izquierda -->
       <div>
@@ -23,14 +23,14 @@ import Button from '../ui/Button.astro';
 
         <h1 style="margin:0 0 30px; line-height:.92;">
           <!-- Línea 1: animación glitch text-shadow cian/magenta -->
-          <span style="display:block;white-space:nowrap;font-family:'Anton',sans-serif;font-size:84px;letter-spacing:1px;color:#f4f5fa;animation:mdGlitch 3.2s infinite steps(2);">
+          <span class="hero-heading-line hero-heading-line--big" style="color:#f4f5fa;animation:mdGlitch 3.2s infinite steps(2);">
             DISEÑAMOS
           </span>
           <!-- Líneas 2-3: filtro grunge -->
-          <span style="display:block;white-space:nowrap;font-family:'Anton',sans-serif;font-size:74px;letter-spacing:.5px;color:#fff;filter:url(#rough);text-shadow:3px 3px 0 rgba(0,0,0,.5);">
+          <span class="hero-heading-line hero-heading-line--medium" style="color:#fff;filter:url(#rough);text-shadow:3px 3px 0 rgba(0,0,0,.5);">
             EXPERIENCIAS
           </span>
-          <span style="display:block;white-space:nowrap;font-family:'Anton',sans-serif;font-size:74px;letter-spacing:.5px;color:#fff;filter:url(#rough);text-shadow:3px 3px 0 rgba(0,0,0,.5);">
+          <span class="hero-heading-line hero-heading-line--medium" style="color:#fff;filter:url(#rough);text-shadow:3px 3px 0 rgba(0,0,0,.5);">
             DIGITALES
           </span>
         </h1>
@@ -47,6 +47,14 @@ import Button from '../ui/Button.astro';
         <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center;">
           <Button label="VER PROYECTOS"      href="#portfolio"  variant="primary" />
           <Button label="NUESTROS SERVICIOS" href="#servicios"  variant="outline" />
+        </div>
+
+        <div class="hero-monitor-mobile lg:hidden">
+          <img
+            src="/pcmedia.png"
+            alt="Media Design PC"
+            class="hero-monitor-mobile__img"
+          />
         </div>
       </div>
 
@@ -87,4 +95,71 @@ import Button from '../ui/Button.astro';
     </div>
   </div>
 </section>
+
+<style>
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0,1.08fr) minmax(0,1fr);
+    gap: 40px;
+    align-items: center;
+  }
+
+  .hero-heading-line {
+    display: block;
+    white-space: nowrap;
+    font-family: 'Anton', sans-serif;
+  }
+
+  .hero-heading-line--big {
+    font-size: 84px;
+    letter-spacing: 1px;
+  }
+
+  .hero-heading-line--medium {
+    font-size: 74px;
+    letter-spacing: .5px;
+  }
+
+  .hero-monitor-mobile {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-monitor-mobile__img {
+    width: 100%;
+    max-width: clamp(260px, 70vw, 420px);
+    height: auto;
+    filter: drop-shadow(0 44px 64px rgba(0,0,0,.6));
+    display: block;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-heading-line--big {
+      font-size: clamp(40px, 9vw, 64px);
+      white-space: normal;
+    }
+    .hero-heading-line--medium {
+      font-size: clamp(36px, 8vw, 56px);
+      white-space: normal;
+    }
+    .hero-grid {
+      gap: 28px;
+    }
+    .hero-monitor-mobile {
+      margin-top: 28px;
+      margin-bottom: 28px;
+    }
+    .hero-monitor-mobile__img {
+      max-width: clamp(240px, 75vw, 380px);
+    }
+  }
+</style>
 

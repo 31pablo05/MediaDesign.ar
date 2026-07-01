@@ -53,7 +53,7 @@ export default function Header() {
         </a>
 
         {/* Desktop nav */}
-        <nav style={{ display: 'flex', alignItems: 'center', gap: 34, whiteSpace: 'nowrap' }} className="hidden md:flex">
+        <nav style={{ alignItems: 'center', gap: 34, whiteSpace: 'nowrap' }} className="hidden md:flex">
           {navLinks.map(link => (
             <a
               key={link.name}
