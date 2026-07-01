@@ -17,6 +17,14 @@ import Button from '../ui/Button.astro';
 
       <!-- Columna izquierda -->
       <div>
+        <div class="hero-monitor-mobile lg:hidden">
+          <img
+            src="/pcmedia.png"
+            alt="Media Design PC"
+            class="hero-monitor-mobile__img"
+          />
+        </div>
+
         <div style="font-size:15px;font-weight:600;letter-spacing:4px;color:#2fe4ff;margin-bottom:22px;text-shadow:0 0 12px rgba(47,228,255,.5);font-family:'Chakra Petch',sans-serif;">
           ESTUDIO DIGITAL INTEGRAL
         </div>
@@ -47,14 +55,6 @@ import Button from '../ui/Button.astro';
         <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center;">
           <Button label="VER PROYECTOS"      href="#portfolio"  variant="primary" />
           <Button label="NUESTROS SERVICIOS" href="#servicios"  variant="outline" />
-        </div>
-
-        <div class="hero-monitor-mobile lg:hidden">
-          <img
-            src="/pcmedia.png"
-            alt="Media Design PC"
-            class="hero-monitor-mobile__img"
-          />
         </div>
       </div>
 
@@ -123,8 +123,7 @@ import Button from '../ui/Button.astro';
   .hero-monitor-mobile {
     margin-top: 32px;
     margin-bottom: 32px;
-    display: flex;
-    justify-content: center;
+    text-align: center;
   }
 
   .hero-monitor-mobile__img {
@@ -133,6 +132,7 @@ import Button from '../ui/Button.astro';
     height: auto;
     filter: drop-shadow(0 44px 64px rgba(0,0,0,.6));
     display: block;
+    margin: 0 auto;
   }
 
   @media (max-width: 900px) {
