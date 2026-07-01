@@ -1,12 +1,12 @@
 ---
 // Datos de proyectos — reemplazar images con rutas reales cuando estén disponibles
 const projects = [
-  { id: 1, title: 'Proyecto Web',       category: 'WEB',        categoryColor: '#2fe4ff', image: null },
-  { id: 2, title: 'Identidad Visual',   category: 'BRANDING',   categoryColor: '#ff3ad8', image: null },
-  { id: 3, title: 'Campaña Social',     category: 'REDES',      categoryColor: '#9d5cff', image: null },
-  { id: 4, title: 'Video Corporativo',  category: 'AUDIOVISUAL', categoryColor: '#2fe4ff', image: null },
-  { id: 5, title: 'E-commerce',         category: 'WEB',        categoryColor: '#ff3ad8', image: null },
-  { id: 6, title: 'Contenido Digital',  category: 'REDES',      categoryColor: '#9d5cff', image: null },
+  { id: 1, title: 'Proyecto Web',       category: 'WEB',        categoryColor: '#2fe4ff', image: 'public/trabajos/23.png' },
+  { id: 2, title: 'Identidad Visual',   category: 'BRANDING',   categoryColor: '#ff3ad8', image: '/trabajos/19.png' },
+  { id: 3, title: 'Campaña Social',     category: 'REDES',      categoryColor: '#9d5cff', image: '/trabajos/20.png', displayCategory: 'PROYECTOS INSTITUCIONALES' },
+  { id: 4, title: 'Video Corporativo',  category: 'AUDIOVISUAL', categoryColor: '#2fe4ff', video: '/trabajos/videoinsti.mp4' },
+  { id: 5, title: 'Landing Page',       category: 'WEB',        categoryColor: '#ff3ad8', image: '/trabajos/21.png' },
+  { id: 6, title: 'Contenido Digital',  category: 'REDES',      categoryColor: '#9d5cff', image: '/trabajos/22.png' },
 ];
 
 const filters = ['TODOS', 'WEB', 'BRANDING', 'REDES', 'AUDIOVISUAL'];
@@ -50,26 +50,26 @@ const filters = ['TODOS', 'WEB', 'BRANDING', 'REDES', 'AUDIOVISUAL'];
           data-category={p.category}
           style="position:relative;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#0c0c12;transition:border-color .25s;"
         >
-          {/* Placeholder imagen 4/3 */}
-          <div style={`width:100%;aspect-ratio:4/3;background:linear-gradient(160deg,#14151b,#0b0b10);display:flex;align-items:center;justify-content:center;`}>
-            {p.image
-              ? <img src={p.image} alt={p.title} style="width:100%;height:100%;object-fit:cover;" />
-              : (
-                <div style="display:flex;flex-direction:column;align-items:center;gap:10px;opacity:.35;">
-                  {/* TODO: reemplazar con imagen real */}
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2fe4ff" stroke-width="1.5">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/>
-                    <circle cx="8.5" cy="8.5" r="1.5"/>
-                    <path d="m21 15-5-5L5 21"/>
-                  </svg>
-                  <span style="font-size:11px;font-family:'Chakra Petch',sans-serif;color:#2fe4ff;letter-spacing:1px;">TODO: imagen</span>
-                </div>
-              )
-            }
+          <div class="project-image">
+            {p.video ? (
+              <video class="project-image__video" src={p.video} muted loop playsInline autoPlay />
+            ) : p.image ? (
+              <img src={p.image} alt={p.title} class="project-image__img" />
+            ) : (
+              <div style="display:flex;flex-direction:column;align-items:center;gap:10px;opacity:.35;">
+                {/* TODO: reemplazar con imagen real */}
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2fe4ff" stroke-width="1.5">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <path d="m21 15-5-5L5 21"/>
+                </svg>
+                <span style="font-size:11px;font-family:'Chakra Petch',sans-serif;color:#2fe4ff;letter-spacing:1px;">TODO: imagen</span>
+              </div>
+            )}
           </div>
           <div style="padding:18px 20px;">
             <span style={`font-size:11px;font-weight:700;letter-spacing:2px;color:${p.categoryColor};font-family:'Chakra Petch',sans-serif;`}>
-              {p.category}
+              {p.displayCategory ?? p.category}
             </span>
             <h3 style="font-size:18px;font-weight:700;color:#fff;margin-top:7px;font-family:'Chakra Petch',sans-serif;">
               {p.title}
@@ -92,12 +92,40 @@ const filters = ['TODOS', 'WEB', 'BRANDING', 'REDES', 'AUDIOVISUAL'];
     color: #2fe4ff !important;
   }
 
+  .project-image {
+    width: 100%;
+    min-height: 260px;
+    background: linear-gradient(160deg, #14151b, #0b0b10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 12px;
+  }
+
+  .project-image__img,
+  .project-image__video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .project-image__video {
+    width: 100%;
+    height: 100%;
+  }
+
   @media (max-width: 1024px) {
     #portfolio-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .project-image { min-height: 220px; }
   }
+
   @media (max-width: 640px) {
     #portfolio-grid { grid-template-columns: 1fr !important; }
     #portfolio-filters { justify-content: center; }
+    .project-image { min-height: 180px; }
   }
 </style>
 

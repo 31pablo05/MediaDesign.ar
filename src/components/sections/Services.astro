@@ -15,44 +15,61 @@ import ServiceCard from '../ui/ServiceCard.astro';
       </h2>
     </div>
 
-    <!-- Grid de servicios -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:22px;">
-      <ServiceCard
-        icon="web"
-        title="DISEÑO WEB"
-        description="Sitios modernos, rápidos y adaptados a tu marca."
-      />
-      <ServiceCard
-        icon="landing"
-        title="LANDING PAGES"
-        description="Páginas de aterrizaje optimizadas para conversión."
-      />
-      <ServiceCard
-        icon="ecommerce"
-        title="TIENDAS ONLINE"
-        description="E-commerce funcional y atractivo para vender más."
-      />
-      <ServiceCard
-        icon="redes"
-        title="GESTIÓN DE REDES"
-        description="Estrategia, contenido y gestión de redes sociales."
-      />
-      <ServiceCard
-        icon="grafico"
-        title="DISEÑO GRÁFICO"
-        description="Piezas visuales que comunican tu mensaje."
-      />
-      <ServiceCard
-        icon="branding"
-        title="BRANDING"
-        description="Identidad visual y posicionamiento de marca."
-      />
-      <ServiceCard
-        icon="audiovisual"
-        title="CONTENIDO AUDIOVISUAL"
-        description="Videos, reels y producciones de alto impacto."
-      />
+    <!-- Fila 1: 3 cards centradas -->
+    <!-- flex-basis = (100% - 3 gaps) / 4 = 25% - 16.5px → mismo ancho que una card en la fila-4 -->
+    <div class="row-3">
+      <div class="wrap"><ServiceCard icon="web"       title="DISEÑO WEB"      description="Sitios modernos, rápidos y adaptados a tu marca." /></div>
+      <div class="wrap"><ServiceCard icon="landing"   title="LANDING PAGES"   description="Páginas de aterrizaje optimizadas para conversión." /></div>
+      <div class="wrap"><ServiceCard icon="ecommerce" title="TIENDAS ONLINE"   description="E-commerce funcional y atractivo para vender más." /></div>
+    </div>
+
+    <!-- Fila 2: 4 cards full-width -->
+    <div class="row-4">
+      <ServiceCard icon="redes"       title="GESTIÓN DE REDES"       description="Estrategia, contenido y gestión de redes sociales." />
+      <ServiceCard icon="grafico"     title="DISEÑO GRÁFICO"         description="Piezas visuales que comunican tu mensaje." />
+      <ServiceCard icon="branding"    title="BRANDING"               description="Identidad visual y posicionamiento de marca." />
+      <ServiceCard icon="audiovisual" title="CONTENIDO AUDIOVISUAL"  description="Videos, reels y producciones de alto impacto." />
     </div>
 
   </div>
 </section>
+
+<style>
+  /* ── Desktop: pirámide invertida 3 / 4 ── */
+  .row-3 {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    margin-bottom: 22px;
+  }
+
+  .wrap {
+    flex: 0 0 calc(25% - 16.5px);
+    min-width: 0;
+  }
+
+  .row-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+
+  /* ── Tablet: 2 columnas en ambas filas ── */
+  @media (max-width: 1024px) {
+    .row-3 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .wrap { flex: unset; }
+
+    .row-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* ── Mobile: 1 columna ── */
+  @media (max-width: 640px) {
+    .row-3 { grid-template-columns: 1fr; }
+    .row-4 { grid-template-columns: 1fr; }
+  }
+</style>
