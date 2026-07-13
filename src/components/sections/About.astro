@@ -88,7 +88,7 @@
 
     <div class="team-block">
       <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:22px;" class="team-grid">
-        <div class="team-card">
+        <div class="team-card team-card--yami">
           <div class="team-card__photo-wrapper">
             <div class="team-card__photo">
               <img src="/nosotros/yami2.png" alt="Yamila Almendra" class="team-card__photo-img" />
@@ -101,7 +101,7 @@
           </div>
         </div>
 
-        <div class="team-card">
+        <div class="team-card team-card--pablo">
           <div class="team-card__photo-wrapper">
             <div class="team-card__photo">
               <img src="/nosotros/pablo2.jpg" alt="Pablo Proboste" class="team-card__photo-img" />
@@ -144,7 +144,7 @@
   .team-card__photo {
     background: linear-gradient(160deg, #14151b, #0b0b10);
     border-radius: 14px;
-    min-height: 280px;
+    height: 280px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -156,6 +156,9 @@
     object-fit: cover;
     display: block;
   }
+
+  /* Ensure both photos use the same fixed height so they match */
+  .team-card--yami .team-card__photo, .team-card--pablo .team-card__photo { height: 280px; }
   .team-card__name {
     font-family: 'Anton', sans-serif;
     font-size: 24px;
@@ -176,5 +179,13 @@
     line-height: 1.7;
     color: #9aa0ad;
     margin: 0;
+  }
+  @media (max-width: 1024px) {
+    .team-card__photo { height: 240px; }
+    .team-card--yami .team-card__photo, .team-card--pablo .team-card__photo { height: 240px; }
+  }
+  @media (max-width: 640px) {
+    .team-card__photo { height: 200px; }
+    .team-card--yami .team-card__photo, .team-card--pablo .team-card__photo { height: 200px; }
   }
 </style>
