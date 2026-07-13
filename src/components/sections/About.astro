@@ -144,21 +144,25 @@
   .team-card__photo {
     background: linear-gradient(160deg, #14151b, #0b0b10);
     border-radius: 14px;
-    height: 280px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    width: 100%;
+    aspect-ratio: 3 / 5; /* taller than before to reduce face cropping */
+    max-height: 840px; /* doubled */
   }
   .team-card__photo-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
+    -webkit-user-drag: none;
   }
 
-  /* Ensure both photos use the same fixed height so they match */
-  .team-card--yami .team-card__photo, .team-card--pablo .team-card__photo { height: 280px; }
+  /* Keep both photos the same aspect and size constraints so they match */
+  .team-card--yami .team-card__photo, .team-card--pablo .team-card__photo { aspect-ratio: 3 / 5; }
   .team-card__name {
     font-family: 'Anton', sans-serif;
     font-size: 24px;
@@ -181,11 +185,9 @@
     margin: 0;
   }
   @media (max-width: 1024px) {
-    .team-card__photo { height: 240px; }
-    .team-card--yami .team-card__photo, .team-card--pablo .team-card__photo { height: 240px; }
+    .team-card__photo { max-height: 760px; aspect-ratio: 3 / 5; }
   }
   @media (max-width: 640px) {
-    .team-card__photo { height: 200px; }
-    .team-card--yami .team-card__photo, .team-card--pablo .team-card__photo { height: 200px; }
+    .team-card__photo { max-height: 600px; aspect-ratio: 3 / 5; }
   }
 </style>
