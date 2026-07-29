@@ -1,29 +1,54 @@
 ---
+const items = [
+  { text: 'CREAMOS TU MUNDO DIGITAL', color: 'var(--color-cyan)' },
+  { text: 'CREAMOS TU MUNDO DIGITAL', color: 'var(--color-magenta)' },
+  { text: 'CREAMOS TU MUNDO DIGITAL', color: 'var(--color-purple)' },
+  { text: 'CREAMOS TU MUNDO DIGITAL', color: 'var(--color-text-primary)' },
+];
 ---
 
-<div style="position:relative;z-index:10;overflow:hidden;border-top:2px solid;border-bottom:2px solid;border-image:linear-gradient(100deg,#2fe4ff,#9d5cff,#ff3ad8) 1;background:#0a0a10;padding:14px 0;">
-  <div style="display:flex;width:max-content;animation:mdMarquee 26s linear infinite;">
-    <!-- Primera copia -->
-    <div style="display:flex;align-items:center;gap:26px;padding-right:26px;">
-      <span style="font-family:'Anton',sans-serif;font-size:22px;letter-spacing:2px;color:#2fe4ff;">CREAMOS TU MUNDO DIGITAL</span>
-      <span style="color:#ff3ad8;font-size:18px;">◆</span>
-      <span style="font-family:'Anton',sans-serif;font-size:22px;letter-spacing:2px;color:#ff3ad8;">CREAMOS TU MUNDO DIGITAL</span>
-      <span style="color:#2fe4ff;font-size:18px;">◆</span>
-      <span style="font-family:'Anton',sans-serif;font-size:22px;letter-spacing:2px;color:#9d5cff;">CREAMOS TU MUNDO DIGITAL</span>
-      <span style="color:#ff3ad8;font-size:18px;">◆</span>
-      <span style="font-family:'Anton',sans-serif;font-size:22px;letter-spacing:2px;color:#f4f5fa;">CREAMOS TU MUNDO DIGITAL</span>
-      <span style="color:#2fe4ff;font-size:18px;">◆</span>
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="marquee-group" aria-hidden="false">
+      {items.map((item, idx) => (
+        <span class="marquee-item">
+          <span class="marquee-text" style={`color:${item.color}`}>{item.text}</span>
+          <span class="marquee-dot" style={`color:${idx % 2 === 0 ? 'var(--color-magenta)' : 'var(--color-cyan)'}`}>◆</span>
+        </span>
+      ))}
     </div>
-    <!-- Segunda copia (loop infinito) -->
-    <div style="display:flex;align-items:center;gap:26px;padding-right:26px;" aria-hidden="true">
-      <span style="font-family:'Anton',sans-serif;font-size:22px;letter-spacing:2px;color:#2fe4ff;">CREAMOS TU MUNDO DIGITAL</span>
-      <span style="color:#ff3ad8;font-size:18px;">◆</span>
-      <span style="font-family:'Anton',sans-serif;font-size:22px;letter-spacing:2px;color:#ff3ad8;">CREAMOS TU MUNDO DIGITAL</span>
-      <span style="color:#2fe4ff;font-size:18px;">◆</span>
-      <span style="font-family:'Anton',sans-serif;font-size:22px;letter-spacing:2px;color:#9d5cff;">CREAMOS TU MUNDO DIGITAL</span>
-      <span style="color:#ff3ad8;font-size:18px;">◆</span>
-      <span style="font-family:'Anton',sans-serif;font-size:22px;letter-spacing:2px;color:#f4f5fa;">CREAMOS TU MUNDO DIGITAL</span>
-      <span style="color:#2fe4ff;font-size:18px;">◆</span>
+    <div class="marquee-group" aria-hidden="true">
+      {items.map((item, idx) => (
+        <span class="marquee-item">
+          <span class="marquee-text" style={`color:${item.color}`}>{item.text}</span>
+          <span class="marquee-dot" style={`color:${idx % 2 === 0 ? 'var(--color-magenta)' : 'var(--color-cyan)'}`}>◆</span>
+        </span>
+      ))}
     </div>
   </div>
 </div>
+
+<style>
+  .marquee-group {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    padding-right: 26px;
+  }
+
+  .marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 26px;
+  }
+
+  .marquee-text {
+    font-family: var(--font-display);
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+
+  .marquee-dot {
+    font-size: 18px;
+  }
+</style>

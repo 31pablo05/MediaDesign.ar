@@ -27,17 +27,17 @@ const { label, href = '#', variant = 'primary', target = '_self' } = Astro.props
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 2px;
-    color: #fff;
+    color: var(--color-white);
     text-decoration: none;
     padding: 15px 30px;
     border-radius: 30px;
-    background: linear-gradient(100deg, #2fe4ff, #9d5cff, #ff3ad8);
-    box-shadow: 0 8px 26px rgba(157,92,255,.45);
+    background: linear-gradient(100deg, var(--color-cyan), var(--color-purple), var(--color-magenta));
+    box-shadow: 0 8px 26px rgba(157, 92, 255, .45);
     transition: filter .2s, box-shadow .2s;
   }
   .btn-primary:hover {
     filter: brightness(1.1);
-    box-shadow: 0 10px 32px rgba(157,92,255,.6);
+    box-shadow: 0 10px 32px rgba(157, 92, 255, .6);
   }
 
   .btn-outline {
@@ -46,7 +46,7 @@ const { label, href = '#', variant = 'primary', target = '_self' } = Astro.props
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 2px;
-    color: #f4f5fa;
+    color: var(--color-white);
     text-decoration: none;
     padding: 15px 30px;
     border-radius: 30px;
@@ -55,7 +55,7 @@ const { label, href = '#', variant = 'primary', target = '_self' } = Astro.props
     transition: border-color .2s, color .2s;
   }
   .btn-outline:hover {
-    border-color: #2fe4ff;
-    color: #2fe4ff;
+    border-color: var(--color-cyan);
+    color: var(--color-cyan);
   }
 </style>

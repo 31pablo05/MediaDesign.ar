@@ -1,40 +1,75 @@
 ---
-// Datos de proyectos — reemplazar images con rutas reales cuando estén disponibles
 const projects = [
-  { id: 1, title: 'Proyecto Web',       category: 'WEB',        categoryColor: '#2fe4ff', image: '/trabajos/23.png' },
-  { id: 2, title: 'Identidad Visual',   category: 'BRANDING',   categoryColor: '#ff3ad8', image: '/trabajos/19.png' },
-  { id: 3, title: 'Campaña Social',     category: 'REDES',      categoryColor: '#9d5cff', image: '/trabajos/20.png', displayCategory: 'PROYECTOS INSTITUCIONALES' },
-  { id: 4, title: 'Video Corporativo',  category: 'AUDIOVISUAL', categoryColor: '#2fe4ff', video: '/trabajos/videoinsti.mp4' },
-  { id: 5, title: 'Landing Page',       category: 'WEB',        categoryColor: '#ff3ad8', image: '/trabajos/21.png' },
-  { id: 6, title: 'Contenido Digital',  category: 'REDES',      categoryColor: '#9d5cff', image: '/trabajos/22.png' },
+  {
+    id: 1,
+    title: 'Proyecto Web',
+    category: 'WEB',
+    categoryColor: 'var(--color-cyan)',
+    image: '/trabajos/23.png',
+    url: 'https://instagram.com/mediadesign.ar',
+    featured: true,
+  },
+  {
+    id: 2,
+    title: 'Identidad Visual',
+    category: 'BRANDING',
+    categoryColor: 'var(--color-magenta)',
+    image: '/trabajos/19.png',
+    url: 'https://instagram.com/mediadesign.ar',
+  },
+  {
+    id: 3,
+    title: 'Campaña Social',
+    category: 'REDES',
+    categoryColor: 'var(--color-purple)',
+    image: '/trabajos/20.png',
+    displayCategory: 'PROYECTOS INSTITUCIONALES',
+    url: 'https://instagram.com/mediadesign.ar',
+  },
+  {
+    id: 4,
+    title: 'Video Corporativo',
+    category: 'AUDIOVISUAL',
+    categoryColor: 'var(--color-cyan)',
+    video: '/trabajos/videoinsti.mp4',
+    url: 'https://instagram.com/mediadesign.ar',
+  },
+  {
+    id: 5,
+    title: 'Landing Page',
+    category: 'WEB',
+    categoryColor: 'var(--color-magenta)',
+    image: '/trabajos/21.png',
+    url: 'https://instagram.com/mediadesign.ar',
+  },
+  {
+    id: 6,
+    title: 'Contenido Digital',
+    category: 'REDES',
+    categoryColor: 'var(--color-purple)',
+    image: '/trabajos/22.png',
+    url: 'https://instagram.com/mediadesign.ar',
+  },
 ];
 
 const filters = ['TODOS', 'WEB', 'BRANDING', 'REDES', 'AUDIOVISUAL'];
 ---
 
-<section id="portfolio" class="section-padding" style="background:#07070b;">
+<section id="portfolio" class="section-padding portfolio-section">
   <div class="container">
 
-    <!-- Encabezado -->
-    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:38px;">
+    <div class="section-header section-header--split" data-reveal>
       <div>
-        <span style="font-size:13px;font-weight:600;letter-spacing:3px;color:#9d5cff;font-family:'Chakra Petch',sans-serif;">
-          // 02 — PROYECTOS
-        </span>
-        <h2 style="font-family:'Anton',sans-serif;font-size:58px;letter-spacing:1px;color:#fff;line-height:.96;margin-top:10px;filter:url(#rough);">
-          TRABAJOS<br>RECIENTES
-        </h2>
+        <span class="section-kicker">// 02 — PROYECTOS</span>
+        <h2 class="section-title">TRABAJOS<br>RECIENTES</h2>
       </div>
 
-      <!-- Chips de filtro -->
-      <div style="display:flex;gap:10px;flex-wrap:wrap;" id="portfolio-filters">
+      <div class="portfolio-filters" id="portfolio-filters" role="group" aria-label="Filtrar proyectos">
         {filters.map((f, idx) => (
           <button
-            class="filter-chip"
+            type="button"
+            class={`filter-chip${idx === 0 ? ' is-active' : ''}`}
             data-filter={f}
-            style={idx === 0
-              ? 'font-size:12.5px;font-weight:600;letter-spacing:1.5px;color:#07070b;background:linear-gradient(100deg,#2fe4ff,#9d5cff,#ff3ad8);padding:9px 18px;border-radius:24px;border:none;cursor:pointer;font-family:"Chakra Petch",sans-serif;'
-              : 'font-size:12.5px;font-weight:600;letter-spacing:1.5px;color:#bcc1cc;border:1px solid rgba(255,255,255,.14);padding:9px 18px;border-radius:24px;background:transparent;cursor:pointer;font-family:"Chakra Petch",sans-serif;transition:border-color .2s,color .2s;'}
           >
             {f}
           </button>
@@ -42,95 +77,58 @@ const filters = ['TODOS', 'WEB', 'BRANDING', 'REDES', 'AUDIOVISUAL'];
       </div>
     </div>
 
-    <!-- Grid de proyectos -->
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;" id="portfolio-grid">
-      {projects.map(p => (
-        <div
-          class="project-card"
+    <div class="portfolio-grid" id="portfolio-grid">
+      {projects.map((p, idx) => (
+        <a
+          href={p.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class={`project-card${p.featured ? ' project-card--featured' : ''}`}
           data-category={p.category}
-          style="position:relative;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#0c0c12;transition:border-color .25s;"
+          data-reveal
+          data-reveal-delay={String((idx % 6) + 1)}
+          style={`--project-color: ${p.categoryColor}`}
         >
           <div class="project-image">
             {p.video ? (
-              <video class="project-image__video" src={p.video} muted loop playsInline autoPlay />
-            ) : p.image ? (
-              <img src={p.image} alt={p.title} class="project-image__img" />
+              <video
+                class="project-image__media project-image__video"
+                src={p.video}
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-label={`Video: ${p.title}`}
+              />
             ) : (
-              <div style="display:flex;flex-direction:column;align-items:center;gap:10px;opacity:.35;">
-                {/* TODO: reemplazar con imagen real */}
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2fe4ff" stroke-width="1.5">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <path d="m21 15-5-5L5 21"/>
-                </svg>
-                <span style="font-size:11px;font-family:'Chakra Petch',sans-serif;color:#2fe4ff;letter-spacing:1px;">TODO: imagen</span>
-              </div>
+              <img
+                src={p.image}
+                alt={p.title}
+                class="project-image__media"
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="600"
+              />
             )}
+            <div class="project-overlay">
+              <span class="project-overlay__cta">VER PROYECTO →</span>
+            </div>
           </div>
-          <div style="padding:18px 20px;">
-            <span style={`font-size:11px;font-weight:700;letter-spacing:2px;color:${p.categoryColor};font-family:'Chakra Petch',sans-serif;`}>
+          <div class="project-body">
+            <span class="project-category">
               {p.displayCategory ?? p.category}
             </span>
-            <h3 style="font-size:18px;font-weight:700;color:#fff;margin-top:7px;font-family:'Chakra Petch',sans-serif;">
-              {p.title}
-            </h3>
+            <h3 class="project-title">{p.title}</h3>
           </div>
-        </div>
+        </a>
       ))}
     </div>
 
   </div>
 </section>
 
-<style>
-  .project-card:hover {
-    border-color: rgba(47,228,255,.5);
-  }
-
-  .filter-chip:hover:not([style*="linear-gradient"]) {
-    border-color: #2fe4ff !important;
-    color: #2fe4ff !important;
-  }
-
-  .project-image {
-    width: 100%;
-    min-height: 260px;
-    background: linear-gradient(160deg, #14151b, #0b0b10);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 12px;
-  }
-
-  .project-image__img,
-  .project-image__video {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-  }
-
-  .project-image__video {
-    width: 100%;
-    height: 100%;
-  }
-
-  @media (max-width: 1024px) {
-    #portfolio-grid { grid-template-columns: repeat(2, 1fr) !important; }
-    .project-image { min-height: 220px; }
-  }
-
-  @media (max-width: 640px) {
-    #portfolio-grid { grid-template-columns: 1fr !important; }
-    #portfolio-filters { justify-content: center; }
-    .project-image { min-height: 180px; }
-  }
-</style>
-
 <script>
-  // Filtrado real por categoría
   const grid = document.getElementById('portfolio-grid');
   const filtersEl = document.getElementById('portfolio-filters');
 
@@ -140,19 +138,29 @@ const filters = ['TODOS', 'WEB', 'BRANDING', 'REDES', 'AUDIOVISUAL'];
 
     const selected = btn.dataset.filter ?? 'TODOS';
 
-    // Actualizar estilos de chips
-    filtersEl.querySelectorAll<HTMLButtonElement>('.filter-chip').forEach(b => {
-      if (b === btn) {
-        b.style.cssText = 'font-size:12.5px;font-weight:600;letter-spacing:1.5px;color:#07070b;background:linear-gradient(100deg,#2fe4ff,#9d5cff,#ff3ad8);padding:9px 18px;border-radius:24px;border:none;cursor:pointer;font-family:"Chakra Petch",sans-serif;';
-      } else {
-        b.style.cssText = 'font-size:12.5px;font-weight:600;letter-spacing:1.5px;color:#bcc1cc;border:1px solid rgba(255,255,255,.14);padding:9px 18px;border-radius:24px;background:transparent;cursor:pointer;font-family:"Chakra Petch",sans-serif;transition:border-color .2s,color .2s;';
-      }
+    filtersEl.querySelectorAll('.filter-chip').forEach((chip) => {
+      chip.classList.toggle('is-active', chip === btn);
     });
 
-    // Mostrar/ocultar tarjetas
-    grid?.querySelectorAll<HTMLElement>('.project-card').forEach(card => {
-      const match = selected === 'TODOS' || card.dataset.category === selected;
+    grid?.querySelectorAll<HTMLElement>('.project-card').forEach((card) => {
+      const category = card.dataset.category ?? '';
+      const match = selected === 'TODOS' || category === selected;
       card.style.display = match ? '' : 'none';
     });
   });
 </script>
+
+<style>
+  .portfolio-filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 640px) {
+    .portfolio-filters {
+      justify-content: center;
+      width: 100%;
+    }
+  }
+</style>

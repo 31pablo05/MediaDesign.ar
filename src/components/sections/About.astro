@@ -1,193 +1,470 @@
 ---
+const processSteps = [
+  { num: '01', color: 'var(--color-cyan)', title: 'Descubrimiento', desc: 'Escuchamos tus objetivos y analizamos tu mercado.' },
+  { num: '02', color: 'var(--color-purple)', title: 'Diseño & Creación', desc: 'Damos forma a la identidad, la web y el contenido.' },
+  { num: '03', color: 'var(--color-magenta)', title: 'Lanzamiento & Soporte', desc: 'Publicamos, medimos y optimizamos para crecer.' },
+];
+
+const team = [
+  {
+    name: 'Yamila Almendra',
+    role: 'DIRECTORA CREATIVA',
+    roleColor: 'var(--color-cyan)',
+    desc: 'Soy diseñadora, estratega en comunicación digital y editora audiovisual.\n\nEn MEDIA DESIGN me encargo de transformar ideas en marcas con identidad, desarrollando estrategias de comunicación, diseño gráfico, branding, gestión de redes sociales y edición de contenido audiovisual.\n\nMe apasiona encontrar la mejor forma de contar la historia de cada proyecto, combinando creatividad, estrategia y contenido para que cada marca comunique con intención, conecte con las personas y transmita el valor de lo que hace.\n\nCreo que una buena presencia digital no se trata solo de verse bien, sino de construir una identidad auténtica que genere confianza y haga crecer a cada negocio.',
+    photo: '/nosotros/yami2.png',
+    instagram: 'https://instagram.com/mediadesign.ar',
+    skills: ['Branding', 'Redes Sociales', 'Diseño Gráfico', 'Comunicación'],
+  },
+  {
+    name: 'Pablo Proboste',
+    role: 'DIRECTOR DE ESTRATEGIA',
+    roleColor: 'var(--color-magenta)',
+    desc: 'Me apasiona convertir ideas en experiencias digitales que funcionen de verdad.\n\nEn MEDIA DESIGN soy el responsable del desarrollo web y de las soluciones tecnológicas que acompañan cada proyecto. También me encargo de la edición de contenido audiovisual, combinando herramientas digitales, diseño y tecnología para darle forma a cada pieza.\n\nDisfruto entender cómo funciona cada detalle, optimizar procesos y encontrar la mejor manera de transformar una idea en una experiencia digital clara, intuitiva y bien ejecutada.\n\nCreo que la tecnología y la creatividad no compiten entre sí: cuando trabajan juntas, nacen los mejores proyectos.',
+    photo: '/nosotros/pablo2.png',
+    instagram: 'https://instagram.com/mediadesign.ar',
+    skills: ['Desarrollo Web', 'React / Astro', 'Edición AV', 'Tecnología'],
+  },
+];
 ---
 
-<section id="nosotros" class="section-padding" style="background:linear-gradient(180deg,#07070b,#0b0b13 50%,#07070b);">
+<section id="nosotros" class="section-padding about">
   <div class="container">
-    <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center;" class="about-grid">
+    <div class="about-grid">
 
-      <!-- Columna izquierda — texto e stats -->
-      <div>
-        <span style="font-size:13px;font-weight:600;letter-spacing:3px;color:#9d5cff;font-family:'Chakra Petch',sans-serif;">
-          // 03 — SOBRE NOSOTROS
-        </span>
+      <div data-reveal>
+        <span class="section-kicker">// 03 — SOBRE NOSOTROS</span>
+        <h2 class="section-title">UN ESTUDIO,<br>MIL IDEAS.</h2>
 
-        <h2 style="font-family:'Anton',sans-serif;font-size:54px;letter-spacing:1px;color:#fff;line-height:.98;margin:12px 0 22px;filter:url(#rough);">
-          UN ESTUDIO,<br>MIL IDEAS.
-        </h2>
-
-        <p style="font-size:18px;line-height:1.6;color:#cdd2dc;margin-bottom:18px;max-width:520px;font-family:'Chakra Petch',sans-serif;">
-          En <strong style="color:#2fe4ff;">Media Design</strong> combinamos diseño, estrategia y tecnología para construir marcas
+        <p class="about-lead">
+          En <strong class="text-cyan">Media Design</strong> combinamos diseño, estrategia y tecnología para construir marcas
           que se sienten vivas en el mundo digital.
         </p>
 
-        <p style="font-size:16px;line-height:1.6;color:#9aa0ad;margin-bottom:34px;max-width:520px;font-family:'Chakra Petch',sans-serif;">
-          Fundado en <strong style="color:#fff;">Trelew, Patagonia, Argentina</strong> por
-          <strong style="color:#2fe4ff;">Yamila Almendra</strong> y
-          <strong style="color:#ff3ad8;"> Pablo Proboste</strong>.
+        <p class="about-body">
+          Fundado en <strong class="text-white">Trelew, Patagonia, Argentina</strong> por
+          <strong class="text-cyan"> Yamila Almendra</strong> y
+          <strong class="text-magenta"> Pablo Proboste</strong>.
           Trabajamos cada proyecto como una colaboración: entendemos tu visión y la llevamos a cada pantalla con personalidad propia.
         </p>
 
-        <!-- Stats con gradiente de marca -->
-        <div style="display:grid;grid-template-columns:repeat(3,auto);gap:36px;">
+        <div class="stats-grid">
           <div>
-            <div style="font-family:'Anton',sans-serif;font-size:46px;background:linear-gradient(120deg,#2fe4ff,#ff3ad8);-webkit-background-clip:text;background-clip:text;color:transparent;">
-              50+
-            </div>
-            <div style="font-size:13px;letter-spacing:1px;color:#9aa0ad;margin-top:2px;font-family:'Chakra Petch',sans-serif;">
-              CLIENTES
-            </div>
+            <div class="stat-number" data-count="50" data-suffix="+">0</div>
+            <div class="stat-label">CLIENTES</div>
           </div>
           <div>
-            <div style="font-family:'Anton',sans-serif;font-size:46px;background:linear-gradient(120deg,#2fe4ff,#ff3ad8);-webkit-background-clip:text;background-clip:text;color:transparent;">
-              100+
-            </div>
-            <div style="font-size:13px;letter-spacing:1px;color:#9aa0ad;margin-top:2px;font-family:'Chakra Petch',sans-serif;">
-              PROYECTOS
-            </div>
+            <div class="stat-number" data-count="100" data-suffix="+">0</div>
+            <div class="stat-label">PROYECTOS</div>
           </div>
           <div>
-            <div style="font-family:'Anton',sans-serif;font-size:46px;background:linear-gradient(120deg,#2fe4ff,#ff3ad8);-webkit-background-clip:text;background-clip:text;color:transparent;">
-              5+
-            </div>
-            <div style="font-size:13px;letter-spacing:1px;color:#9aa0ad;margin-top:2px;font-family:'Chakra Petch',sans-serif;">
-              AÑOS
-            </div>
+            <div class="stat-number" data-count="5" data-suffix="+">0</div>
+            <div class="stat-label">AÑOS</div>
           </div>
         </div>
       </div>
 
-      <!-- Columna derecha — proceso de 3 pasos -->
-      <div style="display:flex;flex-direction:column;gap:16px;">
-
-        <div style="display:flex;gap:18px;align-items:flex-start;padding:22px 24px;border-radius:10px;background:linear-gradient(160deg,#14151b,#0b0b10);border:1px solid rgba(255,255,255,.06);">
-          <span style="font-family:'Anton',sans-serif;font-size:30px;color:#2fe4ff;line-height:1;flex-shrink:0;">01</span>
-          <div>
-            <h3 style="font-size:17px;font-weight:700;color:#fff;margin-bottom:5px;font-family:'Chakra Petch',sans-serif;">Descubrimiento</h3>
-            <p style="font-size:14.5px;line-height:1.5;color:#9aa0ad;font-family:'Chakra Petch',sans-serif;">Escuchamos tus objetivos y analizamos tu mercado.</p>
+      <div class="process-list">
+        {processSteps.map((step, idx) => (
+          <div class="process-card" data-reveal data-reveal-delay={String(idx + 1)}>
+            <span class="process-num" style={`color:${step.color}`}>{step.num}</span>
+            <div>
+              <h3 class="process-title">{step.title}</h3>
+              <p class="process-desc">{step.desc}</p>
+            </div>
           </div>
-        </div>
-
-        <div style="display:flex;gap:18px;align-items:flex-start;padding:22px 24px;border-radius:10px;background:linear-gradient(160deg,#14151b,#0b0b10);border:1px solid rgba(255,255,255,.06);">
-          <span style="font-family:'Anton',sans-serif;font-size:30px;color:#9d5cff;line-height:1;flex-shrink:0;">02</span>
-          <div>
-            <h3 style="font-size:17px;font-weight:700;color:#fff;margin-bottom:5px;font-family:'Chakra Petch',sans-serif;">Diseño & Creación</h3>
-            <p style="font-size:14.5px;line-height:1.5;color:#9aa0ad;font-family:'Chakra Petch',sans-serif;">Damos forma a la identidad, la web y el contenido.</p>
-          </div>
-        </div>
-
-        <div style="display:flex;gap:18px;align-items:flex-start;padding:22px 24px;border-radius:10px;background:linear-gradient(160deg,#14151b,#0b0b10);border:1px solid rgba(255,255,255,.06);">
-          <span style="font-family:'Anton',sans-serif;font-size:30px;color:#ff3ad8;line-height:1;flex-shrink:0;">03</span>
-          <div>
-            <h3 style="font-size:17px;font-weight:700;color:#fff;margin-bottom:5px;font-family:'Chakra Petch',sans-serif;">Lanzamiento & Soporte</h3>
-            <p style="font-size:14.5px;line-height:1.5;color:#9aa0ad;font-family:'Chakra Petch',sans-serif;">Publicamos, medimos y optimizamos para crecer.</p>
-          </div>
-        </div>
-
+        ))}
       </div>
     </div>
 
     <div class="team-block">
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:22px;" class="team-grid">
-        <div class="team-card team-card--yami">
-          <div class="team-card__photo-wrapper">
-            <div class="team-card__photo">
-              <img src="/nosotros/yami2.png" alt="Yamila Almendra" class="team-card__photo-img" />
+      <div class="team-grid">
+        {team.map((member, idx) => (
+          <article class="team-card">
+            <div class="team-card__photo-wrapper">
+              <div class="team-card__photo">
+                <img
+                  src={member.photo}
+                  alt={member.name}
+                  class="team-card__photo-img"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="500"
+                />
+              </div>
             </div>
-          </div>
-          <div style="padding:24px;">
-            <h3 class="team-card__name">Yamila Almendra</h3>
-            <div class="team-card__role" style="color:#2fe4ff;">Directora Creativa</div>
-            <p class="team-card__desc">Lidera la dirección artística, los conceptos visuales y la identidad de marca para cada proyecto.</p>
-          </div>
-        </div>
-
-        <div class="team-card team-card--pablo">
-          <div class="team-card__photo-wrapper">
-            <div class="team-card__photo">
-              <img src="/nosotros/pablo2.jpg" alt="Pablo Proboste" class="team-card__photo-img" />
+            
+            <div class="team-card__body">
+              <h3 class="team-card__name">{member.name}</h3>
+              <div class="team-card__role" style={`color:${member.roleColor}`}>{member.role}</div>
+              
+              <div class="team-skills">
+                {member.skills.map((skill) => (
+                  <span class="team-skill">{skill}</span>
+                ))}
+              </div>
+              
+              <div class="team-divider"></div>
+              
+              <p class="team-card__desc">{member.desc}</p>
+              
+              <a href={member.instagram} target="_blank" rel="noopener noreferrer" class="team-social">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                </svg>
+                @mediadesign.ar
+              </a>
             </div>
-          </div>
-          <div style="padding:24px;">
-            <h3 class="team-card__name">Pablo Proboste</h3>
-            <div class="team-card__role" style="color:#ff3ad8;">Director de Estrategia</div>
-            <p class="team-card__desc">Diseña la estrategia digital, el contenido y la experiencia para que cada marca conecte con su público.</p>
-          </div>
-        </div>
+          </article>
+        ))}
       </div>
     </div>
   </div>
 </section>
 
-<style>
-  @media (max-width: 1024px) {
-    .about-grid {
-      grid-template-columns: 1fr !important;
+<script>
+  // Contador animado para stats
+  function animateCounter(element: HTMLElement, target: number, suffix: string, duration: number) {
+    const start = 0;
+    const startTime = performance.now();
+    
+    function easeOutCubic(t: number): number {
+      return 1 - Math.pow(1 - t, 3);
     }
-    .team-grid {
-      grid-template-columns: 1fr !important;
+    
+    function update(currentTime: number) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeOutCubic(progress);
+      const current = Math.floor(start + (target - start) * easedProgress);
+      
+      element.textContent = current + suffix;
+      
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
     }
+    
+    requestAnimationFrame(update);
   }
+  
+  // Observer para stats counter
+  const statsObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const statNumbers = entry.target.querySelectorAll('.stat-number');
+          statNumbers.forEach((stat) => {
+            const target = parseInt((stat as HTMLElement).dataset.count || '0');
+            const suffix = (stat as HTMLElement).dataset.suffix || '';
+            animateCounter(stat as HTMLElement, target, suffix, 1800);
+          });
+          statsObserver.disconnect();
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+  
+  const aboutSection = document.querySelector('#nosotros');
+  if (aboutSection) {
+    statsObserver.observe(aboutSection);
+  }
+  
+  // Observer para animación fadeUp en team cards
+  const teamCardsObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+  
+  const teamCards = document.querySelectorAll('.team-card');
+  teamCards.forEach((card, index) => {
+    (card as HTMLElement).style.transitionDelay = `${index * 0.15}s`;
+    teamCardsObserver.observe(card);
+  });
+</script>
+
+<style>
+  .about {
+    background: linear-gradient(180deg, var(--color-bg), #0b0b13 50%, var(--color-bg));
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: 56px;
+    align-items: center;
+  }
+
+  .about-lead {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin: 12px 0 18px;
+    max-width: 520px;
+    font-family: var(--font-body);
+  }
+
+  .about-body {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-muted);
+    margin-bottom: 34px;
+    max-width: 520px;
+    font-family: var(--font-body);
+  }
+
+  .text-cyan { color: var(--color-cyan); }
+  .text-magenta { color: var(--color-magenta); }
+  .text-white { color: var(--color-white); }
+
+  /* ===== STATS ===== */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 32px;
+  }
+  
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: 52px;
+    line-height: 1;
+    color: var(--color-white);
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, var(--color-cyan), var(--color-magenta));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .stat-label {
+    font-family: var(--font-body);
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--color-muted);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .process-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .process-card {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    padding: 22px 24px;
+    border-radius: 10px;
+    background: linear-gradient(160deg, var(--color-surface), var(--color-card-to));
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .process-num {
+    font-family: var(--font-display);
+    font-size: 30px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .process-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 5px;
+    font-family: var(--font-body);
+  }
+
+  .process-desc {
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--color-muted);
+    font-family: var(--font-body);
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 48px;
+  }
+
   .team-card {
-    background: linear-gradient(160deg, #14151b, #0b0b10);
-    border: 1px solid rgba(255,255,255,.06);
+    background: linear-gradient(160deg, var(--color-surface), var(--color-card-to));
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 16px;
     overflow: hidden;
-    transition: border-color .25s;
+    transition: all 0.6s ease;
+    opacity: 0;
+    transform: translateY(30px);
   }
+  
+  .team-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .team-card:hover {
-    border-color: rgba(47,228,255,.5);
+    border-color: var(--border-hover);
   }
+
   .team-card__photo-wrapper {
     padding: 4px;
-    background: linear-gradient(120deg, #2fe4ff, #ff3ad8);
+    background: linear-gradient(120deg, var(--color-cyan), var(--color-magenta));
   }
+
   .team-card__photo {
-    background: linear-gradient(160deg, #14151b, #0b0b10);
+    position: relative;
+    background: linear-gradient(160deg, var(--color-surface), var(--color-card-to));
     border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
     width: 100%;
-    aspect-ratio: 3 / 5; /* taller than before to reduce face cropping */
-    max-height: 560px; /* reduced to moderate height */
+    aspect-ratio: 4 / 5;
+    max-height: 480px;
   }
+
   .team-card__photo-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center top;
     display: block;
-    -webkit-user-drag: none;
+  }
+  
+  /* ===== TEAM CARD BODY ===== */
+  .team-card__body {
+    padding: 24px;
   }
 
-  /* Keep both photos the same aspect and size constraints so they match */
-  .team-card--yami .team-card__photo, .team-card--pablo .team-card__photo { aspect-ratio: 3 / 5; }
   .team-card__name {
-    font-family: 'Anton', sans-serif;
-    font-size: 24px;
-    color: #fff;
-    margin: 20px 0 8px;
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--color-white);
+    margin: 0 0 6px;
+    line-height: 1.2;
   }
+
   .team-card__role {
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 12.5px;
-    letter-spacing: 1.5px;
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 14px;
   }
-  .team-card__desc {
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 15px;
-    line-height: 1.7;
+
+  /* ===== SKILLS PILLS ===== */
+  .team-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  
+  .team-skill {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 11px;
+    letter-spacing: 1px;
     color: #9aa0ad;
-    margin: 0;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 30px;
+    padding: 4px 12px;
+    transition: all 0.2s ease;
   }
+  
+  .team-skill:hover {
+    background: rgba(47, 228, 255, 0.1);
+    border-color: var(--color-cyan);
+    color: var(--color-cyan);
+  }
+  
+  /* Divisor entre skills y bio */
+  .team-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--color-cyan), var(--color-magenta));
+    margin: 14px 0;
+    opacity: 0.25;
+  }
+
+  .team-card__desc {
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 1.6;
+    color: #cdd2dc;
+    margin: 0 0 16px;
+    white-space: pre-line;
+  }
+  
+  .team-social {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--color-cyan);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .team-social:hover {
+    color: var(--color-magenta);
+  }
+  
+  .team-skills--mobile {
+    margin-bottom: 14px;
+  }
+
   @media (max-width: 1024px) {
-    .team-card__photo { max-height: 480px; aspect-ratio: 3 / 5; }
+    .about-grid,
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+    .team-card__photo { max-height: 420px; }
+    
+    .stats-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    
+    .stat-number {
+      font-size: 44px;
+    }
   }
+
   @media (max-width: 640px) {
-    .team-card__photo { max-height: 360px; aspect-ratio: 3 / 5; }
+    .team-card__photo { max-height: 360px; }
+    
+    .stats-grid {
+      gap: 16px;
+    }
+    
+    .stat-number {
+      font-size: 36px;
+    }
+    
+    .stat-label {
+      font-size: 10px;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .team-card {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
   }
 </style>

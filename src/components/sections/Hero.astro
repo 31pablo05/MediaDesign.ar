@@ -2,143 +2,319 @@
 import Button from '../ui/Button.astro';
 ---
 
-<section
-  id="inicio"
-  style="position:relative; z-index:10; background:#07070b; overflow:hidden; padding: 48px 0 40px;"
->
-  <!-- Resplandores ambientales -->
-  <div style="position:absolute;top:-160px;right:-120px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(47,228,255,.16),transparent 62%);filter:blur(20px);pointer-events:none;"></div>
-  <div style="position:absolute;top:280px;left:-140px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(255,58,216,.12),transparent 62%);filter:blur(20px);pointer-events:none;"></div>
-  <!-- Grid de fondo -->
-  <div style="position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(120% 90% at 70% 30%,#000 35%,transparent 80%);-webkit-mask-image:radial-gradient(120% 90% at 70% 30%,#000 35%,transparent 80%);"></div>
+<section id="inicio" class="hero">
+  <div class="glow-cyan hero__glow hero__glow--cyan"></div>
+  <div class="glow-magenta hero__glow hero__glow--magenta"></div>
+  <div class="bg-grid"></div>
 
   <div class="container">
     <div class="hero-grid">
 
-      <!-- Columna izquierda -->
-      <div>
+      <div data-reveal>
         <div class="hero-monitor-mobile lg:hidden">
           <img
             src="/pcmedia.png"
-            alt="Media Design PC"
+            alt="Media Design — estudio digital"
             class="hero-monitor-mobile__img"
+            width="500"
+            height="400"
+            fetchpriority="high"
+            decoding="async"
           />
         </div>
 
-        <div style="font-size:15px;font-weight:600;letter-spacing:4px;color:#2fe4ff;margin-bottom:22px;text-shadow:0 0 12px rgba(47,228,255,.5);font-family:'Chakra Petch',sans-serif;">
-          ESTUDIO DIGITAL INTEGRAL
-        </div>
+        <div class="hero-kicker">ESTUDIO DIGITAL INTEGRAL</div>
 
-        <h1 style="margin:0 0 30px; line-height:.92;">
-          <!-- Línea 1: animación glitch text-shadow cian/magenta -->
-          <span class="hero-heading-line hero-heading-line--big" style="color:#f4f5fa;animation:mdGlitch 3.2s infinite steps(2);">
-            DISEÑAMOS
-          </span>
-          <!-- Líneas 2-3: filtro grunge -->
-          <span class="hero-heading-line hero-heading-line--medium" style="color:#fff;filter:url(#rough);text-shadow:3px 3px 0 rgba(0,0,0,.5);">
-            EXPERIENCIAS
-          </span>
-          <span class="hero-heading-line hero-heading-line--medium" style="color:#fff;filter:url(#rough);text-shadow:3px 3px 0 rgba(0,0,0,.5);">
-            DIGITALES
-          </span>
+        <h1 class="hero-title">
+          <span class="hero-heading-line hero-heading-line--big hero-glitch">DISEÑAMOS</span>
+          <span class="hero-heading-line hero-heading-line--medium hero-rough">EXPERIENCIAS</span>
+          <span class="hero-heading-line hero-heading-line--medium hero-rough">DIGITALES</span>
         </h1>
 
-        <p style="max-width:480px;font-size:21px;font-weight:500;line-height:1.5;color:#e7e9f0;margin-bottom:38px;font-family:'Chakra Petch',sans-serif;">
-          <strong style="color:#2fe4ff;font-weight:700;">Diseño</strong> web,
-          <strong style="color:#2fe4ff;font-weight:700;"> marcas</strong>,
-          <strong style="color:#ff3ad8;font-weight:700;"> redes sociales</strong>,
-          <strong style="color:#2fe4ff;font-weight:700;"> contenido</strong> y
-          <strong style="color:#ff3ad8;font-weight:700;"> edición profesional</strong>
+        <p class="hero-desc">
+          <strong class="text-cyan">Diseño</strong> web,
+          <strong class="text-cyan"> marcas</strong>,
+          <strong class="text-magenta"> redes sociales</strong>,
+          <strong class="text-cyan"> contenido</strong> y
+          <strong class="text-magenta"> edición profesional</strong>
           para llevar tu marca al siguiente nivel.
         </p>
 
-        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center;">
-          <Button label="VER PROYECTOS"      href="#portfolio"  variant="primary" />
-          <Button label="NUESTROS SERVICIOS" href="#servicios"  variant="outline" />
+        <div class="hero-actions">
+          <Button label="VER PROYECTOS" href="#portfolio" variant="primary" />
+          <Button label="NUESTROS SERVICIOS" href="#servicios" variant="outline" />
         </div>
       </div>
 
-      <!-- Columna derecha: monitor CRT + stickers flotantes -->
-      <div class="hidden lg:block" style="position:relative; height:560px;">
-
-        <!-- Sticker triángulo advertencia -->
-        <span style="position:absolute;left:32px;top:8px;width:64px;height:64px;animation:mdFloatA 5s ease-in-out infinite;display:block;">
-          <span style="position:absolute;inset:0;clip-path:polygon(50% 4%,96% 92%,4% 92%);background:linear-gradient(#ffd02e,#f4a500);display:block;"></span>
-          <span style="position:absolute;left:0;right:0;bottom:14px;text-align:center;font-family:'Anton',sans-serif;font-size:24px;color:#1a1407;">!</span>
+      <div class="hero-visual hidden lg:block" data-reveal data-reveal-delay="2">
+        <span class="hero-sticker hero-sticker--warn" aria-hidden="true">
+          <span class="hero-sticker__triangle"></span>
+          <span class="hero-sticker__bang">!</span>
         </span>
 
-        <!-- Sticker flecha cian SVG -->
-        <span style="position:absolute;left:-32px;top:200px;animation:mdFloatB 6s ease-in-out infinite;display:block;">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#2fe4ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 6px rgba(47,228,255,.6));">
+        <span class="hero-sticker hero-sticker--arrow" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
             <path d="M24 30V10"/><path d="M15 19l9-9 9 9"/><path d="M10 34h28"/>
           </svg>
         </span>
 
-        <!-- Sticker cursor blanco -->
-        <span style="position:absolute;right:-6px;top:120px;width:34px;height:42px;background:#cfd3dd;filter:drop-shadow(2px 3px 2px rgba(0,0,0,.6));clip-path:polygon(0 0,0 78%,22% 60%,36% 95%,52% 88%,38% 55%,64% 55%);animation:mdFloatC 5.5s ease-in-out infinite;display:block;"></span>
+        <span class="hero-sticker hero-sticker--cursor hero-sticker--cursor-a" aria-hidden="true"></span>
+        <span class="hero-sticker hero-sticker--cursor hero-sticker--cursor-b" aria-hidden="true"></span>
+        <span class="hero-sticker hero-sticker--pixel hero-sticker--pixel-magenta" aria-hidden="true"></span>
+        <span class="hero-sticker hero-sticker--pixel hero-sticker--pixel-cyan" aria-hidden="true"></span>
 
-        <!-- Sticker cursor gris bottom-right -->
-        <span style="position:absolute;right:24px;bottom:24px;width:30px;height:36px;background:#e9eaf0;filter:drop-shadow(2px 3px 2px rgba(0,0,0,.6));clip-path:polygon(0 0,0 78%,22% 60%,36% 95%,52% 88%,38% 55%,64% 55%);animation:mdFloatA 6.5s ease-in-out infinite;display:block;"></span>
-
-        <!-- Pixel magenta y cian -->
-        <span style="position:absolute;right:120px;top:30px;width:10px;height:10px;background:#ff3ad8;box-shadow:0 0 10px #ff3ad8;display:block;"></span>
-        <span style="position:absolute;left:8px;bottom:30px;width:8px;height:8px;background:#2fe4ff;box-shadow:0 0 10px #2fe4ff;display:block;"></span>
-
-        <!-- Monitor PC imagen -->
-        <img 
-          src="/pcmedia.png" 
+        <img
+          src="/pcmedia.png"
           alt="Media Design PC"
-          style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) perspective(1100px) rotateY(-7deg) rotateX(2deg);width:100%;max-width:500px;height:auto;filter:drop-shadow(0 44px 64px rgba(0,0,0,.6));"
+          class="hero-monitor"
+          width="500"
+          height="400"
+          fetchpriority="high"
+          decoding="async"
         />
-
       </div>
+
+      <!-- Stickers simplificados en mobile -->
+      <div class="hero-stickers-mobile lg:hidden" aria-hidden="true">
+        <span class="hero-sticker hero-sticker--pixel hero-sticker--pixel-magenta"></span>
+        <span class="hero-sticker hero-sticker--pixel hero-sticker--pixel-cyan"></span>
+      </div>
+
     </div>
   </div>
 </section>
 
 <style>
+  .hero {
+    position: relative;
+    z-index: 10;
+    background: var(--color-bg);
+    overflow: hidden;
+    padding: 48px 0 40px;
+  }
+
+  .hero__glow--cyan {
+    top: -160px;
+    right: -120px;
+    width: 620px;
+    height: 620px;
+  }
+
+  .hero__glow--magenta {
+    top: 280px;
+    left: -140px;
+    width: 560px;
+    height: 560px;
+  }
+
   .hero-grid {
     display: grid;
-    grid-template-columns: minmax(0,1.08fr) minmax(0,1fr);
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
     gap: 40px;
     align-items: center;
+  }
+
+  .hero-kicker {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--color-cyan);
+    margin-bottom: 22px;
+    text-shadow: 0 0 12px rgba(47, 228, 255, 0.5);
+    font-family: var(--font-body);
+  }
+
+  .hero-title {
+    margin: 0 0 30px;
+    line-height: 0.92;
   }
 
   .hero-heading-line {
     display: block;
     white-space: nowrap;
-    font-family: 'Anton', sans-serif;
+    font-family: var(--font-display);
   }
 
   .hero-heading-line--big {
     font-size: 84px;
     letter-spacing: 1px;
+    color: var(--color-text-primary);
   }
 
   .hero-heading-line--medium {
     font-size: 74px;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
+    color: var(--color-white);
+  }
+
+  .hero-glitch {
+    animation: mdGlitch 3.2s infinite steps(2);
+  }
+
+  .hero-rough {
+    filter: url(#rough);
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-desc {
+    max-width: 480px;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--color-text-body);
+    margin-bottom: 38px;
+    font-family: var(--font-body);
+  }
+
+  .text-cyan { color: var(--color-cyan); font-weight: 700; }
+  .text-magenta { color: var(--color-magenta); font-weight: 700; }
+
+  .hero-actions {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .hero-visual {
+    position: relative;
+    height: 560px;
+  }
+
+  .hero-monitor {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) perspective(1100px) rotateY(-7deg) rotateX(2deg);
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    filter: drop-shadow(0 44px 64px rgba(0, 0, 0, 0.6));
   }
 
   .hero-monitor-mobile {
-    margin-top: 32px;
-    margin-bottom: 32px;
+    margin: 32px 0;
     text-align: center;
   }
 
   .hero-monitor-mobile__img {
     width: 100%;
     max-width: clamp(260px, 70vw, 420px);
-    height: auto;
-    filter: drop-shadow(0 44px 64px rgba(0,0,0,.6));
+    filter: drop-shadow(0 44px 64px rgba(0, 0, 0, 0.6));
     display: block;
     margin: 0 auto;
   }
 
-  @media (max-width: 900px) {
-    .hero-grid {
-      grid-template-columns: 1fr;
+  .hero-sticker {
+    position: absolute;
+    display: block;
+  }
+
+  .hero-sticker--warn {
+    left: 32px;
+    top: 8px;
+    width: 64px;
+    height: 64px;
+    animation: mdFloatA 5s ease-in-out infinite;
+  }
+
+  .hero-sticker__triangle {
+    position: absolute;
+    inset: 0;
+    clip-path: polygon(50% 4%, 96% 92%, 4% 92%);
+    background: linear-gradient(#ffd02e, #f4a500);
+  }
+
+  .hero-sticker__bang {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 14px;
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 24px;
+    color: #1a1407;
+  }
+
+  .hero-sticker--arrow {
+    left: -32px;
+    top: 200px;
+    color: var(--color-cyan);
+    filter: drop-shadow(0 0 6px rgba(47, 228, 255, 0.6));
+    animation: mdFloatB 6s ease-in-out infinite;
+  }
+
+  .hero-sticker--cursor {
+    filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.6));
+    clip-path: polygon(0 0, 0 78%, 22% 60%, 36% 95%, 52% 88%, 38% 55%, 64% 55%);
+  }
+
+  .hero-sticker--cursor-a {
+    right: -6px;
+    top: 120px;
+    width: 34px;
+    height: 42px;
+    background: #cfd3dd;
+    animation: mdFloatC 5.5s ease-in-out infinite;
+  }
+
+  .hero-sticker--cursor-b {
+    right: 24px;
+    bottom: 24px;
+    width: 30px;
+    height: 36px;
+    background: #e9eaf0;
+    animation: mdFloatA 6.5s ease-in-out infinite;
+  }
+
+  .hero-sticker--pixel {
+    box-shadow: 0 0 10px currentColor;
+  }
+
+  .hero-sticker--pixel-magenta {
+    right: 120px;
+    top: 30px;
+    width: 10px;
+    height: 10px;
+    background: var(--color-magenta);
+    color: var(--color-magenta);
+  }
+
+  .hero-sticker--pixel-cyan {
+    left: 8px;
+    bottom: 30px;
+    width: 8px;
+    height: 8px;
+    background: var(--color-cyan);
+    color: var(--color-cyan);
+  }
+
+  .hero-stickers-mobile {
+    position: relative;
+    height: 28px;
+    margin-top: -12px;
+  }
+
+  .hero-stickers-mobile .hero-sticker--pixel-magenta {
+    right: 20%;
+    top: 0;
+  }
+
+  .hero-stickers-mobile .hero-sticker--pixel-cyan {
+    left: 18%;
+    top: 8px;
+    bottom: auto;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-glitch {
+      animation: none;
+      text-shadow: -2px 0 var(--color-cyan), 2px 0 var(--color-magenta);
     }
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 768px) {
@@ -150,16 +326,7 @@ import Button from '../ui/Button.astro';
       font-size: clamp(36px, 8vw, 56px);
       white-space: normal;
     }
-    .hero-grid {
-      gap: 28px;
-    }
-    .hero-monitor-mobile {
-      margin-top: 28px;
-      margin-bottom: 28px;
-    }
-    .hero-monitor-mobile__img {
-      max-width: clamp(240px, 75vw, 380px);
-    }
+    .hero-grid { gap: 28px; }
+    .hero-monitor-mobile { margin: 28px 0; }
   }
 </style>
-

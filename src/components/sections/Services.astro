@@ -2,40 +2,33 @@
 import ServiceCard from '../ui/ServiceCard.astro';
 ---
 
-<section id="servicios" class="section-padding" style="background:#07070b;">
+<section id="servicios" class="section-padding" style="background:var(--color-bg);">
   <div class="container">
 
-    <!-- Encabezado -->
-    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:34px;">
-      <span style="font-size:13px;font-weight:600;letter-spacing:3px;color:#9d5cff;font-family:'Chakra Petch',sans-serif;">
-        // 01 — SERVICIOS
-      </span>
-      <h2 style="text-align:center;font-size:26px;font-weight:700;letter-spacing:3px;color:#2fe4ff;text-shadow:0 0 14px rgba(47,228,255,.4);font-family:'Chakra Petch',sans-serif;">
-        SOLUCIONES CREATIVAS PARA TU MARCA.
+    <div class="section-header section-header--center" data-reveal>
+      <span class="section-kicker">// 01 — SERVICIOS</span>
+      <h2 class="section-title section-title--center">
+        SOLUCIONES CREATIVAS<br>PARA TU MARCA.
       </h2>
     </div>
 
-    <!-- Fila 1: 3 cards centradas -->
-    <!-- flex-basis = (100% - 3 gaps) / 4 = 25% - 16.5px → mismo ancho que una card en la fila-4 -->
     <div class="row-3">
-      <div class="wrap"><ServiceCard icon="web"       title="DISEÑO WEB"      description="Sitios modernos, rápidos y adaptados a tu marca." /></div>
-      <div class="wrap"><ServiceCard icon="landing"   title="LANDING PAGES"   description="Páginas de aterrizaje optimizadas para conversión." /></div>
-      <div class="wrap"><ServiceCard icon="ecommerce" title="TIENDAS ONLINE"   description="E-commerce funcional y atractivo para vender más." /></div>
+      <div class="wrap" data-reveal data-reveal-delay="1"><ServiceCard icon="web" title="DISEÑO WEB" description="Sitios modernos, rápidos y adaptados a tu marca." /></div>
+      <div class="wrap" data-reveal data-reveal-delay="2"><ServiceCard icon="landing" title="LANDING PAGES" description="Páginas de aterrizaje optimizadas para conversión." /></div>
+      <div class="wrap" data-reveal data-reveal-delay="3"><ServiceCard icon="ecommerce" title="TIENDAS ONLINE" description="E-commerce funcional y atractivo para vender más." /></div>
     </div>
 
-    <!-- Fila 2: 4 cards full-width -->
     <div class="row-4">
-      <ServiceCard icon="redes"       title="GESTIÓN DE REDES"       description="Estrategia, contenido y gestión de redes sociales." />
-      <ServiceCard icon="grafico"     title="DISEÑO GRÁFICO"         description="Piezas visuales que comunican tu mensaje." />
-      <ServiceCard icon="branding"    title="BRANDING"               description="Identidad visual y posicionamiento de marca." />
-      <ServiceCard icon="audiovisual" title="CONTENIDO AUDIOVISUAL"  description="Videos, reels y producciones de alto impacto." />
+      <div data-reveal data-reveal-delay="1"><ServiceCard icon="redes" title="GESTIÓN DE REDES" description="Estrategia, contenido y gestión de redes sociales." /></div>
+      <div data-reveal data-reveal-delay="2"><ServiceCard icon="grafico" title="DISEÑO GRÁFICO" description="Piezas visuales que comunican tu mensaje." /></div>
+      <div data-reveal data-reveal-delay="3"><ServiceCard icon="branding" title="BRANDING" description="Identidad visual y posicionamiento de marca." /></div>
+      <div data-reveal data-reveal-delay="4"><ServiceCard icon="audiovisual" title="CONTENIDO AUDIOVISUAL" description="Videos, reels y producciones de alto impacto." /></div>
     </div>
 
   </div>
 </section>
 
 <style>
-  /* ── Desktop: pirámide invertida 3 / 4 ── */
   .row-3 {
     display: flex;
     justify-content: center;
@@ -54,22 +47,17 @@ import ServiceCard from '../ui/ServiceCard.astro';
     gap: 22px;
   }
 
-  /* ── Tablet: 2 columnas en ambas filas ── */
   @media (max-width: 1024px) {
     .row-3 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
     }
     .wrap { flex: unset; }
-
-    .row-4 {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    .row-4 { grid-template-columns: repeat(2, 1fr); }
   }
 
-  /* ── Mobile: 1 columna ── */
   @media (max-width: 640px) {
-    .row-3 { grid-template-columns: 1fr; }
+    .row-3,
     .row-4 { grid-template-columns: 1fr; }
   }
 </style>
